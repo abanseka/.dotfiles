@@ -1,0 +1,9 @@
+[user]
+	name = sly
+	email = sylvester@archis.company
+[core]
+	editor = code
+[push]
+	autoSetupRemote = true
+	autoSetupRemote = false
+	autoSetupRemote = true

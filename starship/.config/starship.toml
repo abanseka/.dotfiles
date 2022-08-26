@@ -1,0 +1,17 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[aws]
+disabled = true
+
+[directory]
+truncation_length = 1
+
+# ~/.config/starship.toml
+
+[git_branch]
+truncation_length = 13
+truncation_symbol = ""
+
+[character] 
+success_symbol = "[🐻](bold green)" 
