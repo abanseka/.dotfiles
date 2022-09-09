@@ -123,3 +123,8 @@ export PATH="~/.local/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
