@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias v='nvim'
+alias v="nvim"
 alias lv="lvim"
 alias cat="batcat"
 alias ls="lsd"
@@ -118,13 +118,14 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="~/.nvm/versions/node/v16.15.0/bin/node:$PATH"
 export PATH="~/.cargo/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
-	eval "$(starship init bash)"
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 
+# auto completions
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+eval "$(starship init bash)"
