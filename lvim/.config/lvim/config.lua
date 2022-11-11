@@ -1,25 +1,15 @@
---[[
-lvim is the global options object
-
-Linters should be
-filled in as strings with either
-a global executable or a path to
-an executable
-]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
 -- general
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
+
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- unmap a default keymapping
--- vim.keymap.del("n", "<C-Up>")
--- override a default keymapping
--- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+keymap("i", "kj", "<ESC>", opts)
 
 
 -- TODO: User Config for predefined plugins
@@ -53,50 +43,91 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 
-lvim.builtin.nvimtree.setup.view.width = 45
-lvim.builtin.nvimtree.setup.view.side = "right"
-lvim.builtin.nvimtree.setup.view.hide_root_folder = true
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
+lvim.builtin.breadcrumbs.active = true
+lvim.builtin.terminal.open_mapping = "<c-t>"
 
-lvim.builtin.notify.active = true
-lvim.builtin.notify.opts.background_color = "Normal"
+lvim.builtin.nvimtree.setup.view.width = 30
+lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.filters.custom = {}
+lvim.builtin.nvimtree.setup.view.hide_root_folder = true
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+
+lvim.builtin.treesitter.rainbow.enable = true
+
 
 -- Additional Plugins
 lvim.plugins = {
   { "mattn/emmet-vim" },
-  { 'ful1e5/onedark.nvim' },
-  { "ray-x/lsp_signature.nvim" },
+  { 'abanseka/dimonedark.nvim' },
+  { "p00f/nvim-ts-rainbow" },
   { "norcalli/nvim-colorizer.lua" },
-  { "lukas-reineke/indent-blankline.nvim" },
-
+  { "ggandor/lightspeed.nvim" },
+  { 'rmagatti/goto-preview' },
   { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   },
-  { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim",
+  { "folke/todo-comments.nvim",
     config = function()
       require("todo-comments").setup()
     end
   },
-  {
-    "glepnir/lspsaga.nvim",
-    branch = "main"
-  }
 }
 
 -- vanilla vim configs
 -- emmet
-vim.g.user_emmet_mode = "n"
+vim.g.user_emmet_mode = "n" -- enable emmet completions in normal mode
 vim.g.user_emmet_intall_globals = 0
-vim.g.user_emmet_leader_key = ","
-vim.opt.cursorline = true
+vim.g.user_emmet_leader_key = "," -- auto complete key for tags
+vim.opt.cursorline = true -- hightlight current line?
+vim.opt.cmdheight = 0 -- command window height
+vim.opt.laststatus = 3 -- Global status line
 
+-- preview
+local preview = require('goto-preview')
+preview.setup({
+  border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+})
 
--- nvim configs
+-- ts-rainbow
+require 'nvim-treesitter.configs'.setup {
+  rainbow = {
+    colors = {
+      -- Colors here
+      "#CF6D76",
+      "#a89984",
+      "#b16286",
+      "#d79921",
+      "#689d6a",
+      "#d65d0e",
+      "#458588",
+    },
+    -- Term colors
+    termcolors = {
+      -- Term colors here
+    }
+  },
+}
+
+-- context
+lvim.builtin.breadcrumbs.options = {
+  depth_limit = 1,
+  separator = "|"
+}
+
+-- indent blankline
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#404D65 gui=nocombine]]
+vim.opt.list = true
+vim.opt.listchars:append "space:⋅"
+lvim.builtin.indentlines.options = {
+  show_current_context = false,
+  space_char_blankline = " ",
+}
+
 -- lualine
 local function logo()
-  return [[ ]] --
+  return [[ ]] -- 
 end
 
 lvim.builtin.lualine.sections.lualine_b = { "filename" }
@@ -113,20 +144,14 @@ lvim.builtin.lualine.sections.lualine_x = {
 local colorizer = require("colorizer")
 colorizer.setup()
 
--- blankline
-vim.opt.list = true
-require("indent_blankline").setup {
-  show_current_context = true,
-}
-
 -- Prettier formatting
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "prettier" } }
 
-lvim.format_on_save = {
-  pattern = "*",
-  timeout = 4000,
-}
+-- lvim.format_on_save = {
+--   pattern = "*",
+--   timeout = 100,
+-- }
 
 -- Tabnine
 local tabnine = require('cmp_tabnine.config')
@@ -138,26 +163,32 @@ tabnine.setup({
   snippet_placeholder = '..',
 })
 
-
 -- dashboard
-lvim.builtin.alpha.dashboard.section.header.val = {
+lvim.builtin.alpha.startify.section.header.val = {
   "                                                         ",
-  "                                                        ",
-  "                                                         ",
-  "                                                         ",
-  "                                                        ",
-  "                                                         ",
-  "                                                        ",
   "  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
   "  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
   "  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
   "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
   "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
   "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
+  "                                                         ",
+}
+
+lvim.builtin.alpha.dashboard.section.header.val = {
+  -- "                                                        ",
+  -- "                                                        ",
+  -- "                                                        ",
+  -- "                                                        ",
+  -- "                                                        ",
+  -- "  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
+  -- "  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
+  -- "  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
+  "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
+  "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
+  "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
   "                                                        ",
-  "                                                         ",
   "                                                        ",
-  "                                                         ",
 }
 
 lvim.builtin.alpha.dashboard.section.buttons.entries = {
@@ -172,6 +203,7 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
     "<CMD>edit " .. require("lvim.config"):get_user_config_path() .. " <CR>",
   },
 }
+
 
 -- file explorer
 lvim.builtin.nvimtree.setup.diagnostics.icons = {
@@ -204,18 +236,16 @@ lvim.builtin.nvimtree.setup.renderer.icons.glyphs = {
 
 -- bufferline
 lvim.builtin.bufferline.options = {
-  indicator_icon = " ",
+  mode = "buffers",
   buffer_close_icon = "",
   modified_icon = "●",
   close_icon = "",
   left_trunc_marker = "",
   right_trunc_marker = "",
-  offsets = {
-    filetype = "NvimTree",
-    text = " ",
-    highlight = "PanelHeading",
-    padding = 1,
-  }
+  idicator = {
+    icon = " ",
+    style = "icon",
+  },
 }
 
 -- whichkey
@@ -226,7 +256,8 @@ lvim.builtin.which_key.setup = {
     group = "  ",
   },
   layout = {
-    align = 'right'
+    align = "center",
+    spacing = 5
   },
   window = {
     border = "none"
@@ -241,31 +272,6 @@ lvim.builtin.telescope.defaults = {
   sorting_strategy = "descending",
 }
 
---notify
-lvim.builtin.notify.opts = {
-  stages = "fade",
-  background_colour = "#21252b",
-  timeout = 2000,
-  icons = {
-    ERROR = " ",
-    WARN = " ",
-    INFO = "",
-    DEBUG = "",
-    TRACE = "",
-  }
-}
-
--- lsp Signature
-require "lsp_signature".setup({
-  bind = true,
-  handler_opts = {
-    border = "rounded"
-  }
-})
-
--- lsp Saga
-local saga = require('lspsaga')
-saga.init_lsp_saga()
 
 -- keymappings
 lvim.builtin.which_key.mappings["m"] = {
@@ -273,5 +279,15 @@ lvim.builtin.which_key.mappings["m"] = {
   p = { "<cmd>:MarkdownPreviewToggle<CR>", "Preview" }
 }
 
-lvim.lsp.buffer_mappings.normal_mode["<leader>lr"] = { "<cmd>Lspsaga rename<cr>", "rename" }
-lvim.lsp.buffer_mappings.normal_mode["<leader>la"] = { "<cmd>Lspsaga range_code_action<cr>", "rename" }
+lvim.builtin.which_key.mappings["lp"] = {
+  name = "Peek",
+  d = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition" },
+  r = { "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "Reference" },
+  i = { "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", "Implementation" },
+  t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "Type Def" }
+}
+
+lvim.builtin.which_key.mappings["ss"] = {
+  name = "Scratch Buffers",
+  s = { "<cmd>:e ~/scratchpad.md<CR>", "Scratch Pad" }
+}
