@@ -12,9 +12,6 @@ local keymap = vim.api.nvim_set_keymap
 keymap("i", "kj", "<ESC>", opts)
 
 
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -28,37 +25,57 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
+-- colorscheme
+vim.g.everforest_background = 'hard'
+vim.g.everforest_current_word = "none"
+vim.g.everforest_ui_contrast = "low"
+vim.g.everforest_transparent_background = 1
+vim.g.everforest_disable_terminal_colors = 1
+
+vim.g.everforest_colors_override = {
+  bg2 = '#2b3339',
+  bg3 = '#2b3339',
+  bg4 = '#2b3339',
+  bg_dim = '#2b3339',
+}
+
+
+-- vanilla vim configs
+-- emmet
+vim.g.user_emmet_mode = "n"
+vim.g.user_emmet_intall_globals = 0
+vim.g.user_emmet_leader_key = ","
+
+vim.opt.cursorline = true
+vim.opt.cmdheight = 0
+vim.opt.laststatus = 3
 
 vim.log.level = "warn"
-lvim.colorscheme = "onedark"
+lvim.colorscheme = "everforest"
 lvim.format_on_save = true
 lvim.transparent_window = true
-lvim.builtin.terminal.active = true
+
 lvim.lsp.document_highlight = false
 lvim.lsp.diagnostics.virtual_text = false
 
+lvim.builtin.terminal.active = true
+lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
-
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-
 lvim.builtin.breadcrumbs.active = true
 lvim.builtin.terminal.open_mapping = "<c-t>"
-
-lvim.builtin.nvimtree.setup.view.width = 30
+lvim.builtin.nvimtree.setup.view.width = 35
 lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.filters.custom = {}
 lvim.builtin.nvimtree.setup.view.hide_root_folder = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
-lvim.builtin.treesitter.rainbow.enable = true
-
 
 -- Additional Plugins
 lvim.plugins = {
   { "mattn/emmet-vim" },
-  { 'abanseka/dimonedark.nvim' },
+  { "sainnhe/everforest" },
   { "p00f/nvim-ts-rainbow" },
   { "norcalli/nvim-colorizer.lua" },
   { "ggandor/lightspeed.nvim" },
@@ -68,26 +85,28 @@ lvim.plugins = {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   },
-  { "folke/todo-comments.nvim",
-    config = function()
-      require("todo-comments").setup()
-    end
-  },
 }
 
--- vanilla vim configs
--- emmet
-vim.g.user_emmet_mode = "n" -- enable emmet completions in normal mode
-vim.g.user_emmet_intall_globals = 0
-vim.g.user_emmet_leader_key = "," -- auto complete key for tags
-vim.opt.cursorline = true -- hightlight current line?
-vim.opt.cmdheight = 0 -- command window height
-vim.opt.laststatus = 3 -- Global status line
+-- packer
+local packer = require("packer")
+packer.startup({ function()
+  -- Your plugins here
+end,
+  config = {
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'none' })
+      end
+    }
+  } })
+
 
 -- preview
 local preview = require('goto-preview')
 preview.setup({
   border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+  opacity = 0,
+  height = 20
 })
 
 -- ts-rainbow
@@ -112,22 +131,19 @@ require 'nvim-treesitter.configs'.setup {
 
 -- context
 lvim.builtin.breadcrumbs.options = {
-  depth_limit = 1,
   separator = "|"
 }
 
 -- indent blankline
-vim.cmd [[highlight IndentBlanklineContextChar guifg=#404D65 gui=nocombine]]
-vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
 lvim.builtin.indentlines.options = {
-  show_current_context = false,
-  space_char_blankline = " ",
+  enabled = false,
+  use_treesitter = true,
+  show_current_context = true
 }
 
 -- lualine
 local function logo()
-  return [[ ]] -- 
+  return [[ ]]
 end
 
 lvim.builtin.lualine.sections.lualine_b = { "filename" }
@@ -165,30 +181,24 @@ tabnine.setup({
 
 -- dashboard
 lvim.builtin.alpha.startify.section.header.val = {
-  "                                                         ",
-  "  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
-  "  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
-  "  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
-  "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
-  "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
-  "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
-  "                                                         ",
-}
-
-lvim.builtin.alpha.dashboard.section.header.val = {
-  -- "                                                        ",
-  -- "                                                        ",
-  -- "                                                        ",
-  -- "                                                        ",
-  -- "                                                        ",
+  -- "                                                         ",
   -- "  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
   -- "  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
   -- "  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
-  "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
-  "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
-  "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
-  "                                                        ",
-  "                                                        ",
+  -- "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
+  -- "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
+  -- "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
+  -- "                                                         ",
+}
+
+lvim.builtin.alpha.dashboard.section.header.val = {
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
+  "                                                         ",
 }
 
 lvim.builtin.alpha.dashboard.section.buttons.entries = {
@@ -242,6 +252,7 @@ lvim.builtin.bufferline.options = {
   close_icon = "",
   left_trunc_marker = "",
   right_trunc_marker = "",
+  tab_size = 10,
   idicator = {
     icon = " ",
     style = "icon",

@@ -13,4 +13,4 @@ truncation_length = 13
 truncation_symbol = ""
 
 [character]
-success_symbol = "[🐻](bold green)"
+success_symbol = "[🍒](bold green)"
