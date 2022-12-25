@@ -53,7 +53,7 @@ vim.opt.laststatus = 3
 vim.log.level = "warn"
 lvim.colorscheme = "everforest"
 lvim.format_on_save = true
-lvim.transparent_window = true
+lvim.transparent_window = false
 
 lvim.lsp.document_highlight = false
 lvim.lsp.diagnostics.virtual_text = false
@@ -80,10 +80,48 @@ lvim.plugins = {
   { "norcalli/nvim-colorizer.lua" },
   { "ggandor/lightspeed.nvim" },
   { 'rmagatti/goto-preview' },
+  { 'metakirby5/codi.vim' },
   { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    "felipec/vim-sanegx",
+    event = "BufRead",
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require "lsp_signature".on_attach() end,
+  },
+}
+
+-- dap config
+local dap = require('dap')
+dap.adapters.node2 = {
+  type = 'executable',
+  command = 'node',
+  args = { os.getenv('HOME') .. '/dev/ms/vscode-node-debug2/out/src/nodeDebug.js' },
+}
+
+dap.configurations.javascript = {
+  {
+    name = 'Launch',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+    console = 'integratedTerminal',
   },
 }
 
@@ -95,7 +133,7 @@ end,
   config = {
     display = {
       open_fn = function()
-        return require('packer.util').float({ border = 'none' })
+        return require('packer.util').float({ border = 'single' })
       end
     }
   } })
@@ -135,10 +173,15 @@ lvim.builtin.breadcrumbs.options = {
 }
 
 -- indent blankline
+-- vim.opt.listchars:append "space:⋅"
+-- vim.opt.list = true
+-- vim.opt.listchars:append "eol:↴"
 lvim.builtin.indentlines.options = {
   enabled = false,
-  use_treesitter = true,
-  show_current_context = true
+  use_treesitter = false,
+  show_current_context = false,
+  show_end_of_line = true,
+  space_char_blankline = " ",
 }
 
 -- lualine
