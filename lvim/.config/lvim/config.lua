@@ -33,10 +33,10 @@ vim.g.everforest_transparent_background = 1
 vim.g.everforest_disable_terminal_colors = 1
 
 vim.g.everforest_colors_override = {
-  bg2 = '#2b3339',
-  bg3 = '#2b3339',
-  bg4 = '#2b3339',
-  bg_dim = '#2b3339',
+  bg2 = '#1F252B',
+  bg3 = '#1F252B',
+  bg4 = '#1F252B',
+  bg_dim = '#1F252B',
 }
 
 
@@ -49,6 +49,8 @@ vim.g.user_emmet_leader_key = ","
 vim.opt.cursorline = true
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
+vim.opt.fillchars = "diff:╱"
+vim.opt_global.fillchars = "eob: "
 
 vim.log.level = "warn"
 lvim.colorscheme = "everforest"
@@ -81,6 +83,7 @@ lvim.plugins = {
   { "ggandor/lightspeed.nvim" },
   { 'rmagatti/goto-preview' },
   { 'metakirby5/codi.vim' },
+  { 'sindrets/diffview.nvim', event = "BufRead" },
   { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
   {
     "iamcco/markdown-preview.nvim",
@@ -102,7 +105,14 @@ lvim.plugins = {
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
   },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {}
+    end
+  }
 }
+
 
 -- dap config
 local dap = require('dap')
@@ -167,9 +177,20 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
+lvim.autocommands = {
+  {
+    "BufNewFile,BufRead", -- see `:h autocmd-events`
+    { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
+      pattern = { ".env*" }, -- see `:h autocmd-events`
+      command = "set syntax=erlang",
+    }
+  },
+}
+
 -- context
 lvim.builtin.breadcrumbs.options = {
-  separator = "|"
+  separator = "|",
+  depth_limit = 2
 }
 
 -- indent blankline
@@ -178,10 +199,9 @@ lvim.builtin.breadcrumbs.options = {
 -- vim.opt.listchars:append "eol:↴"
 lvim.builtin.indentlines.options = {
   enabled = false,
-  use_treesitter = false,
-  show_current_context = false,
-  show_end_of_line = true,
-  space_char_blankline = " ",
+  use_treesitter = true,
+  show_current_context = true,
+  -- space_char_blankline = " ",
 }
 
 -- lualine
@@ -214,7 +234,12 @@ formatters.setup { { command = "prettier" } }
 
 -- Tabnine
 local tabnine = require('cmp_tabnine.config')
-tabnine.setup({
+tabnine:setup({
+  sources = {
+    {
+      name = "cmp_tabnine"
+    }
+  },
   max_lines = 1000,
   max_num_results = 20,
   sort = true,
@@ -235,7 +260,6 @@ lvim.builtin.alpha.startify.section.header.val = {
 }
 
 lvim.builtin.alpha.dashboard.section.header.val = {
-  "                                                         ",
   "                                                         ",
   "                                                         ",
   "                                                         ",
@@ -341,7 +365,16 @@ lvim.builtin.which_key.mappings["lp"] = {
   t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "Type Def" }
 }
 
+
 lvim.builtin.which_key.mappings["ss"] = {
   name = "Scratch Buffers",
   s = { "<cmd>:e ~/scratchpad.md<CR>", "Scratch Pad" }
+}
+
+
+lvim.builtin.which_key.mappings["gd"] = {
+  name = "Diff",
+  c = { "<cmd>:DiffviewClose<CR>", "close diff" },
+  d = { "<cmd>:DiffviewOpen<CR>", "open diff" },
+  h = { "<cmd>:DiffviewFileHistory<CR>", "file history" },
 }
