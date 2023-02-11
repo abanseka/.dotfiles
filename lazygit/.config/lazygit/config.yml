@@ -1,0 +1,7 @@
+gui:
+  showIcons: true
+  theme:
+    selectedLineBgColor:
+      - "#323C41"
+    selectedRangeBgColor:
+      - "#323C41"
