@@ -11,17 +11,15 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 keymap("i", "kj", "<ESC>", opts)
 
-
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
   "javascript",
-  "json",
-  "lua",
   "typescript",
+  "lua",
+  "json",
+  "bash",
   "tsx",
   "css",
-  "rust",
   "yaml",
 }
 
@@ -39,18 +37,16 @@ vim.g.everforest_colors_override = {
   bg_dim = '#1F252B',
 }
 
-
 -- vanilla vim configs
--- emmet
 vim.g.user_emmet_mode = "n"
 vim.g.user_emmet_intall_globals = 0
 vim.g.user_emmet_leader_key = ","
 
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
-vim.opt.fillchars = "diff:╱"
 vim.opt_global.fillchars = "eob: "
+vim.g.fillchars = "diff:╱"
 
 vim.log.level = "warn"
 lvim.colorscheme = "everforest"
@@ -62,10 +58,9 @@ lvim.lsp.diagnostics.virtual_text = false
 
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
-lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.breadcrumbs.active = true
+lvim.builtin.breadcrumbs.active = false
 lvim.builtin.terminal.open_mapping = "<c-t>"
 lvim.builtin.nvimtree.setup.view.width = 35
 lvim.builtin.nvimtree.setup.view.side = "right"
@@ -82,60 +77,24 @@ lvim.plugins = {
   { "norcalli/nvim-colorizer.lua" },
   { "ggandor/lightspeed.nvim" },
   { 'rmagatti/goto-preview' },
-  { 'metakirby5/codi.vim' },
+  { "nacro90/numb.nvim" },
   { 'sindrets/diffview.nvim', event = "BufRead" },
   { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-  },
-  {
-    "felipec/vim-sanegx",
-    event = "BufRead",
-  },
-  {
-    "folke/todo-comments.nvim",
-    event = "BufRead",
-    config = function()
-      require("todo-comments").setup()
-    end,
-  },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
-  },
-  {
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {}
-    end
   }
 }
 
+-- CONFIGS 🔖
+-- jumpto num config
+local numb = require("numb")
+numb.setup({
+  show_numbers = true,
+  show_cursorline = true
+})
 
--- dap config
-local dap = require('dap')
-dap.adapters.node2 = {
-  type = 'executable',
-  command = 'node',
-  args = { os.getenv('HOME') .. '/dev/ms/vscode-node-debug2/out/src/nodeDebug.js' },
-}
-
-dap.configurations.javascript = {
-  {
-    name = 'Launch',
-    type = 'node2',
-    request = 'launch',
-    program = '${file}',
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-  },
-}
-
--- packer
+-- packer 🔖
 local packer = require("packer")
 packer.startup({ function()
   -- Your plugins here
@@ -149,7 +108,7 @@ end,
   } })
 
 
--- preview
+-- preview 🔖
 local preview = require('goto-preview')
 preview.setup({
   border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
@@ -157,7 +116,7 @@ preview.setup({
   height = 20
 })
 
--- ts-rainbow
+-- ts-rainbow 🔖
 require 'nvim-treesitter.configs'.setup {
   rainbow = {
     colors = {
@@ -177,34 +136,13 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
-lvim.autocommands = {
-  {
-    "BufNewFile,BufRead", -- see `:h autocmd-events`
-    { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
-      pattern = { ".env*" }, -- see `:h autocmd-events`
-      command = "set syntax=erlang",
-    }
-  },
-}
-
--- context
+-- context 🔖
 lvim.builtin.breadcrumbs.options = {
   separator = "|",
   depth_limit = 2
 }
 
--- indent blankline
--- vim.opt.listchars:append "space:⋅"
--- vim.opt.list = true
--- vim.opt.listchars:append "eol:↴"
-lvim.builtin.indentlines.options = {
-  enabled = false,
-  use_treesitter = true,
-  show_current_context = true,
-  -- space_char_blankline = " ",
-}
-
--- lualine
+-- lualine 🔖
 local function logo()
   return [[ ]]
 end
@@ -219,20 +157,20 @@ lvim.builtin.lualine.sections.lualine_x = {
   end }
 }
 
--- colorizer
+-- colorizer 🔖
 local colorizer = require("colorizer")
 colorizer.setup()
 
--- Prettier formatting
+-- Prettier formatting 🔖
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "prettier" } }
 
--- lvim.format_on_save = {
---   pattern = "*",
---   timeout = 100,
--- }
+lvim.format_on_save = {
+  pattern = "*",
+  timeout = 500,
+}
 
--- Tabnine
+-- Tabnine 🔖
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
   sources = {
@@ -246,18 +184,6 @@ tabnine:setup({
   run_on_every_keystroke = true,
   snippet_placeholder = '..',
 })
-
--- dashboard
-lvim.builtin.alpha.startify.section.header.val = {
-  -- "                                                         ",
-  -- "  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
-  -- "  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
-  -- "  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
-  -- "  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
-  -- "  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
-  -- "  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
-  -- "                                                         ",
-}
 
 lvim.builtin.alpha.dashboard.section.header.val = {
   "                                                         ",
@@ -282,7 +208,7 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
 }
 
 
--- file explorer
+-- file explorer 🔖
 lvim.builtin.nvimtree.setup.diagnostics.icons = {
   hint = " ",
   info = " ",
@@ -311,7 +237,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.glyphs = {
   },
 }
 
--- bufferline
+-- bufferline 🔖
 lvim.builtin.bufferline.options = {
   mode = "buffers",
   buffer_close_icon = "",
@@ -326,7 +252,7 @@ lvim.builtin.bufferline.options = {
   },
 }
 
--- whichkey
+-- whichkey 🔖
 lvim.builtin.which_key.setup = {
   icons = {
     breadcrumb = "  ",
@@ -342,16 +268,14 @@ lvim.builtin.which_key.setup = {
   }
 }
 
--- Telescope
-lvim.builtin.telescope.defaults.layout_strategy = "vertical"
+-- Telescope 🔖
 lvim.builtin.telescope.defaults = {
   prompt_prefix = " ",
   selection_caret = "ﰳ ",
   sorting_strategy = "descending",
 }
 
-
--- keymappings
+-- keymappings 🔖
 lvim.builtin.which_key.mappings["m"] = {
   name = "markdown",
   p = { "<cmd>:MarkdownPreviewToggle<CR>", "Preview" }
@@ -365,12 +289,10 @@ lvim.builtin.which_key.mappings["lp"] = {
   t = { "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", "Type Def" }
 }
 
-
 lvim.builtin.which_key.mappings["ss"] = {
   name = "Scratch Buffers",
-  s = { "<cmd>:e ~/scratchpad.md<CR>", "Scratch Pad" }
+  s = { "<cmd>:e ~/scratchpad.js<CR>", "Scratch Pad" }
 }
-
 
 lvim.builtin.which_key.mappings["gd"] = {
   name = "Diff",

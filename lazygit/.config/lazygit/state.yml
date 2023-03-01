@@ -3,16 +3,19 @@ recentrepos:
 - /home/abanseka/.dotfiles
 - /home/abanseka/archis/lokum/client
 - /home/abanseka/archis/lokum/cms
-- /home/abanseka/traineeProjects/hr-services-next
 - /home/abanseka/traineeProjects/Last-landify-project
-- /home/abanseka/codeSandBox/next-tutorial
+- /home/abanseka/traineeProjects/figma-to-css
+- /home/abanseka/archis/academy/academy-client-next
+- /home/abanseka/traineeProjects/hr-services-next
+- /home/abanseka/traineeProjects/unit_converter
+- /home/abanseka/Documents/projects/viginere-cipher
+- /home/abanseka/traineeProjects/Tolgas-Diner
+- /home/abanseka/.local/share/lunarvim/lvim
 - /home/abanseka/archis/saksi/marketing-next
 - /home/abanseka/.local/share/lunarvim/site/pack/packer/start/everforest
 - /home/abanseka/archis/saksi/keycloak-20.0.1
 - /home/abanseka/archis/saksi/saksi-cms
 - /home/abanseka/archis/saksi/authentication-server
-- /home/abanseka/.local/share/lunarvim/lvim
-- /home/abanseka/archis/academy/academy-client-next
 startuppopupversion: 5
 customcommandshistory:
 - :noh

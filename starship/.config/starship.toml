@@ -1,5 +1,5 @@
 # Get editor completions based on the config schema
-# add_newline = true
+add_newline = true
 "$schema" = 'https://starship.rs/config-schema.json'
 
 [aws]
@@ -14,3 +14,8 @@ truncation_symbol = ""
 
 [character]
 success_symbol = "[🍒](bold green)"
+
+[username]
+format = '🐶 sly: '
+disabled = false
+show_always = true
