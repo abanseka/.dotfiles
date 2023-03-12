@@ -130,3 +130,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 eval "$(starship init bash)"
+function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}

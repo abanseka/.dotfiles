@@ -1,16 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/abanseka/.dotfiles
+- /home/abanseka/Documents/projects/Mern-app/mern-client
 - /home/abanseka/archis/lokum/client
-- /home/abanseka/archis/lokum/cms
-- /home/abanseka/traineeProjects/Last-landify-project
-- /home/abanseka/traineeProjects/figma-to-css
-- /home/abanseka/archis/academy/academy-client-next
-- /home/abanseka/traineeProjects/hr-services-next
-- /home/abanseka/traineeProjects/unit_converter
-- /home/abanseka/Documents/projects/viginere-cipher
-- /home/abanseka/traineeProjects/Tolgas-Diner
+- /home/abanseka/Documents/projects/Mern-app/mern-server
 - /home/abanseka/.local/share/lunarvim/lvim
+- /home/abanseka/archis/lokum/cms
+- /home/abanseka/archis/academy/academy-client-next
+- /home/abanseka/Documents/projects/viginere-cipher
 - /home/abanseka/archis/saksi/marketing-next
 - /home/abanseka/.local/share/lunarvim/site/pack/packer/start/everforest
 - /home/abanseka/archis/saksi/keycloak-20.0.1

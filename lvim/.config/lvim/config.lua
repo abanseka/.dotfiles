@@ -51,11 +51,13 @@ vim.g.fillchars = "diff:╱"
 vim.log.level = "warn"
 lvim.colorscheme = "everforest"
 lvim.format_on_save = true
-lvim.transparent_window = false
+lvim.transparent_window = true
 
 lvim.lsp.document_highlight = false
 lvim.lsp.diagnostics.virtual_text = false
 
+lvim.builtin.indentlines.active = false
+lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.alpha.active = true
@@ -165,12 +167,12 @@ colorizer.setup()
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "prettier" } }
 
-lvim.format_on_save = {
-  pattern = "*",
-  timeout = 500,
-}
+-- lvim.format_on_save = {
+--   pattern = "*",
+--   timeout = 100,
+-- }
 
--- Tabnine 🔖
+-- -- Tabnine 🔖
 local tabnine = require('cmp_tabnine.config')
 tabnine:setup({
   sources = {
