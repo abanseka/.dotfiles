@@ -80,6 +80,7 @@ lvim.plugins = {
   { "ggandor/lightspeed.nvim" },
   { 'rmagatti/goto-preview' },
   { "nacro90/numb.nvim" },
+  { 'Exafunction/codeium.vim' },
   { 'sindrets/diffview.nvim', event = "BufRead" },
   { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
   {
@@ -293,7 +294,7 @@ lvim.builtin.which_key.mappings["lp"] = {
 
 lvim.builtin.which_key.mappings["ss"] = {
   name = "Scratch Buffers",
-  s = { "<cmd>:e ~/scratchpad.js<CR>", "Scratch Pad" }
+  s = { "<cmd>:e ~/scratchFolder/scratchpad.js<CR>", "Scratch Pad" }
 }
 
 lvim.builtin.which_key.mappings["gd"] = {
@@ -301,4 +302,15 @@ lvim.builtin.which_key.mappings["gd"] = {
   c = { "<cmd>:DiffviewClose<CR>", "close diff" },
   d = { "<cmd>:DiffviewOpen<CR>", "open diff" },
   h = { "<cmd>:DiffviewFileHistory<CR>", "file history" },
+}
+
+-- auto-commands 🔖
+lvim.autocommands = {
+  {
+    "BufEnter", -- see `:h autocmd-events`
+    { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
+      pattern = { "*.env", ".env*" }, -- see `:h autocmd-events`
+      command = "set syntax=erlang",
+    }
+  },
 }

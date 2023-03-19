@@ -1,12 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/abanseka/.dotfiles
-- /home/abanseka/Documents/projects/Mern-app/mern-client
 - /home/abanseka/archis/lokum/client
-- /home/abanseka/Documents/projects/Mern-app/mern-server
-- /home/abanseka/.local/share/lunarvim/lvim
 - /home/abanseka/archis/lokum/cms
 - /home/abanseka/archis/academy/academy-client-next
+- /home/abanseka/traineeProjects/saranya/figma-to-css
+- /home/abanseka/Documents/projects/Mern-app/mern-client
+- /home/abanseka/Documents/projects/Mern-app/mern-server
+- /home/abanseka/.local/share/lunarvim/lvim
 - /home/abanseka/Documents/projects/viginere-cipher
 - /home/abanseka/archis/saksi/marketing-next
 - /home/abanseka/.local/share/lunarvim/site/pack/packer/start/everforest
