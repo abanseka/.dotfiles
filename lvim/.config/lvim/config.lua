@@ -81,8 +81,8 @@ lvim.plugins = {
   { 'rmagatti/goto-preview' },
   { "nacro90/numb.nvim" },
   { 'Exafunction/codeium.vim' },
-  { 'sindrets/diffview.nvim', event = "BufRead" },
-  { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' },
+  { "folke/noice.nvim",           requires = { "MunifTanjim/nui.nvim" } },
+  { 'sindrets/diffview.nvim',     event = "BufRead" },
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -90,7 +90,23 @@ lvim.plugins = {
 }
 
 -- CONFIGS 🔖
--- jumpto num config
+-- noice config 🔖
+local noice = require("noice")
+noice.setup({
+  messages = { enabled = false },
+  lsp = {
+    progress = { enabled = false },
+    hover = { enabled = false },
+    signature = { enabled = false },
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
+    },
+  },
+})
+
+-- jumpto num config 🔖
 local numb = require("numb")
 numb.setup({
   show_numbers = true,
@@ -99,16 +115,18 @@ numb.setup({
 
 -- packer 🔖
 local packer = require("packer")
-packer.startup({ function()
-  -- Your plugins here
-end,
+packer.startup({
+  function()
+    -- Your plugins here
+  end,
   config = {
     display = {
       open_fn = function()
         return require('packer.util').float({ border = 'single' })
       end
     }
-  } })
+  }
+})
 
 
 -- preview 🔖
@@ -155,9 +173,12 @@ lvim.builtin.lualine.sections.lualine_y = { "filetype" }
 lvim.builtin.lualine.sections.lualine_z = { "progress" }
 lvim.builtin.lualine.sections.lualine_a = { { logo } }
 lvim.builtin.lualine.sections.lualine_x = {
-  { "branch", fmt = function(str)
-    return str:sub(1, 11)
-  end }
+  {
+    "branch",
+    fmt = function(str)
+      return str:sub(1, 11)
+    end
+  }
 }
 
 -- colorizer 🔖
@@ -173,21 +194,7 @@ formatters.setup { { command = "prettier" } }
 --   timeout = 100,
 -- }
 
--- -- Tabnine 🔖
-local tabnine = require('cmp_tabnine.config')
-tabnine:setup({
-  sources = {
-    {
-      name = "cmp_tabnine"
-    }
-  },
-  max_lines = 1000,
-  max_num_results = 20,
-  sort = true,
-  run_on_every_keystroke = true,
-  snippet_placeholder = '..',
-})
-
+-- dashboard 🔖
 lvim.builtin.alpha.dashboard.section.header.val = {
   "                                                         ",
   "                                                         ",
@@ -198,11 +205,11 @@ lvim.builtin.alpha.dashboard.section.header.val = {
 }
 
 lvim.builtin.alpha.dashboard.section.buttons.entries = {
-  { "SPC f", "  Find File", "<CMD>Telescope find_files<CR>" },
-  { "SPC n", "ﱐ  New File", "<CMD>ene!<CR>" },
-  { "SPC P", "  Recent Projects ", "<CMD>Telescope projects<CR>" },
+  { "SPC f",   "  Find File",           "<CMD>Telescope find_files<CR>" },
+  { "SPC n",   "ﱐ  New File",            "<CMD>ene!<CR>" },
+  { "SPC P",   "  Recent Projects ",    "<CMD>Telescope projects<CR>" },
   { "SPC s r", "ﭯ  Recently Used Files", "<CMD>Telescope oldfiles<CR>" },
-  { "SPC s t", "  Find Word", "<CMD>Telescope live_grep<CR>" },
+  { "SPC s t", "  Find Word",           "<CMD>Telescope live_grep<CR>" },
   {
     "SPC L c",
     "  Configuration",
@@ -308,7 +315,8 @@ lvim.builtin.which_key.mappings["gd"] = {
 lvim.autocommands = {
   {
     "BufEnter", -- see `:h autocmd-events`
-    { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
+    {
+      -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
       pattern = { "*.env", ".env*" }, -- see `:h autocmd-events`
       command = "set syntax=erlang",
     }
