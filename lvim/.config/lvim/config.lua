@@ -56,20 +56,17 @@ lvim.transparent_window = true
 lvim.lsp.document_highlight = false
 lvim.lsp.diagnostics.virtual_text = false
 
-lvim.builtin.indentlines.active = false
 lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.breadcrumbs.active = false
 lvim.builtin.terminal.open_mapping = "<c-t>"
-lvim.builtin.nvimtree.setup.view.width = 35
-lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.view.width = 30
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.filters.custom = {}
 lvim.builtin.nvimtree.setup.view.hide_root_folder = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-
 
 -- Additional Plugins
 lvim.plugins = {
@@ -80,13 +77,18 @@ lvim.plugins = {
   { "ggandor/lightspeed.nvim" },
   { 'rmagatti/goto-preview' },
   { "nacro90/numb.nvim" },
-  { 'Exafunction/codeium.vim' },
   { "folke/noice.nvim",           requires = { "MunifTanjim/nui.nvim" } },
   { 'sindrets/diffview.nvim',     event = "BufRead" },
   {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-  }
+  },
+  {
+    'Exafunction/codeium.vim',
+    config = function()
+      vim.keymap.set('i', '<leader-a>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+    end
+  },
 }
 
 -- CONFIGS 🔖
@@ -196,12 +198,15 @@ formatters.setup { { command = "prettier" } }
 
 -- dashboard 🔖
 lvim.builtin.alpha.dashboard.section.header.val = {
-  "                                                         ",
-  "                                                         ",
-  "                                                         ",
-  "                                                         ",
-  "                                                         ",
-  "                                                         ",
+  "           ▄ ▄                   ",
+  "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+  "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+  "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+  "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+  "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+  "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+  "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+  "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
 }
 
 lvim.builtin.alpha.dashboard.section.buttons.entries = {
@@ -217,7 +222,6 @@ lvim.builtin.alpha.dashboard.section.buttons.entries = {
   },
 }
 
-
 -- file explorer 🔖
 lvim.builtin.nvimtree.setup.diagnostics.icons = {
   hint = " ",
@@ -229,15 +233,6 @@ lvim.builtin.nvimtree.setup.diagnostics.icons = {
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs = {
   default = " ",
   symlink = " ",
-  git = {
-    unstaged = "笠",
-    staged = "ﮉ ",
-    unmerged = "狀",
-    renamed = "識",
-    deleted = "ﰡ ",
-    untracked = "炙",
-    ignored = " ",
-  },
   folder = {
     default = " ",
     open = " ",
@@ -250,7 +245,9 @@ lvim.builtin.nvimtree.setup.renderer.icons.glyphs = {
 -- bufferline 🔖
 lvim.builtin.bufferline.options = {
   mode = "buffers",
-  buffer_close_icon = "",
+  buffer_close_icon = " ",
+  seperator_style = " ",
+  show_tab_indicators = false,
   modified_icon = "●",
   close_icon = "",
   left_trunc_marker = "",
@@ -319,6 +316,17 @@ lvim.autocommands = {
       -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
       pattern = { "*.env", ".env*" }, -- see `:h autocmd-events`
       command = "set syntax=erlang",
-    }
+    },
   },
+}
+
+lvim.autocommands = {
+  {
+    "BufEnter", -- see `:h autocmd-events`
+    {
+      -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
+      pattern = { "*.mdx", "*.md" }, -- see `:h autocmd-events`
+      command = "set filetype=markdown",
+    }
+  }
 }
