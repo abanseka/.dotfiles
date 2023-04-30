@@ -42,11 +42,17 @@ vim.g.user_emmet_mode = "n"
 vim.g.user_emmet_intall_globals = 0
 vim.g.user_emmet_leader_key = ","
 
-vim.opt.cursorline = false
+vim.opt.cursorline = true
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
-vim.opt_global.fillchars = "eob: "
-vim.g.fillchars = "diff:╱"
+
+vim.opt.fillchars = {
+  fold = " ",
+  eob = " ",  -- suppress ~ at EndOfBuffer
+  diff = " ", -- alternatives = ⣿ ░ ╱─
+  msgsep = "‾",
+  foldsep = "░",
+}
 
 vim.log.level = "warn"
 lvim.colorscheme = "everforest"
@@ -62,8 +68,8 @@ lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.open_mapping = "<c-t>"
-lvim.builtin.nvimtree.setup.view.width = 30
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.width = 60
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.filters.custom = {}
 lvim.builtin.nvimtree.setup.view.hide_root_folder = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -88,6 +94,17 @@ lvim.plugins = {
     config = function()
       vim.keymap.set('i', '<leader-a>', function() return vim.fn['codeium#Accept']() end, { expr = true })
     end
+  },
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    module = "persistence",
+    config = function()
+      require("persistence").setup {
+        dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+        options = { "buffers", "curdir", "tabpages", "winsize" },
+      }
+    end,
   },
 }
 
@@ -193,7 +210,7 @@ formatters.setup { { command = "prettier" } }
 
 -- lvim.format_on_save = {
 --   pattern = "*",
---   timeout = 100,
+--   timeout = 1000,
 -- }
 
 -- dashboard 🔖
@@ -308,6 +325,19 @@ lvim.builtin.which_key.mappings["gd"] = {
   h = { "<cmd>:DiffviewFileHistory<CR>", "file history" },
 }
 
+lvim.builtin.which_key.mappings["o"] = {
+  name = "open",
+  l = { "<cmd>:lua require('persistence').load({last=true})<CR>", "last session" },
+  d = { "<cmd>:lua require('persistence').load()<CR>", "4rm dir" },
+}
+
+-- restore the session for the current directory
+-- restore the last session
+-- stop Persistence => session won't be saved on exit
+-- vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
+-- vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
+-- vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
+
 -- auto-commands 🔖
 lvim.autocommands = {
   {
@@ -330,3 +360,4 @@ lvim.autocommands = {
     }
   }
 }
+
