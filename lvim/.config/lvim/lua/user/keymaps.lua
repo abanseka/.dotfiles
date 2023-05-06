@@ -29,8 +29,3 @@ lvim.builtin.which_key.mappings["gd"] = {
   h = { "<cmd>:DiffviewFileHistory<CR>", "file history" },
 }
 
-lvim.builtin.which_key.mappings["o"] = {
-  name = "open",
-  l = { "<cmd>:lua require('persistence').load({last=true})<CR>", "last session" },
-  d = { "<cmd>:lua require('persistence').load()<CR>", "4rm dir" },
-}

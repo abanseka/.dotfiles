@@ -5,6 +5,8 @@ reload("user.keymaps")
 reload("user.plugins")
 
 -- sane configs
+lvim.format_on_save = true
+lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.ensure_installed = {
   "javascript",
   "typescript",
@@ -17,6 +19,13 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 
+vim.opt.fillchars = {
+  fold = " ",
+  eob = " ",  -- suppress ~ at EndOfBuffer
+  diff = "╱", -- alternatives = ⣿ ░ ─
+}
+
+
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "prettier" } }
 
@@ -24,26 +33,6 @@ lvim.builtin.breadcrumbs.options = {
   separator = "|",
   depth_limit = 2
 }
-
-vim.opt.fillchars = {
-  fold = " ",
-  eob = " ",  -- suppress ~ at EndOfBuffer
-  diff = " ", -- alternatives = ⣿ ░ ╱─
-  msgsep = "‾",
-  foldsep = "░",
-}
-
--- file explorer 🔖
-lvim.builtin.nvimtree.setup.diagnostics.icons = {
-  hint = " ",
-  info = " ",
-  warning = " ",
-  error = " ",
-  prompt_prefix = " ",
-  selection_caret = "ﰳ ",
-  sorting_strategy = "descending",
-}
-
 
 -- whichkey 🔖
 lvim.builtin.which_key.setup = {
@@ -75,3 +64,7 @@ require("nvim-treesitter.configs").setup({
     },
   },
 })
+
+require('goto-preview').setup {
+  preview_window_title = { enable = false, position = "left" }
+}
