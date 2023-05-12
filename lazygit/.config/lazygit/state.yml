@@ -2,6 +2,7 @@ lastupdatecheck: 0
 recentrepos:
 - /home/abanseka/.dotfiles
 - /home/abanseka/archis/lokum/client
+- /home/abanseka/.dotfiles/nvim/.config/nvim
 - /home/abanseka/Documents/projects/Bankist
 - /home/abanseka/.config/nvim
 - /home/abanseka/Documents/projects/website
