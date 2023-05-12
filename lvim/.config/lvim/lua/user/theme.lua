@@ -9,7 +9,7 @@ lvim.colorscheme = "everforest"
 vim.g.everforest_background = 'hard'
 vim.g.everforest_current_word = "none"
 vim.g.everforest_ui_contrast = "low"
-vim.g.everforest_transparent_background = 1
+vim.g.everforest_transparent_background = 0
 vim.g.everforest_disable_terminal_colors = 1
 
 -- lualine 🔖
@@ -29,5 +29,3 @@ lvim.builtin.lualine.sections.lualine_x = {
     end
   }
 }
-
-

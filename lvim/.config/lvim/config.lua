@@ -18,14 +18,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-
-vim.opt.fillchars = {
-  fold = " ",
-  eob = " ",  -- suppress ~ at EndOfBuffer
-  diff = "╱", -- alternatives = ⣿ ░ ─
-}
-
-
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "prettier" } }
 
@@ -64,7 +56,3 @@ require("nvim-treesitter.configs").setup({
     },
   },
 })
-
-require('goto-preview').setup {
-  preview_window_title = { enable = false, position = "left" }
-}

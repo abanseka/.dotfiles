@@ -4,9 +4,14 @@ vim.g.user_emmet_leader_key = ","
 vim.opt.cursorline = true
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
+vim.opt_global.fillchars = {
+  fold = " ",
+  eob = " ",  -- suppress ~ at EndOfBuffer
+  diff = " ", -- alternatives = ⣿ ░ ─
+}
 
 lvim.builtin.terminal.open_mapping = "<c-t>"
-lvim.builtin.nvimtree.setup.view.side = "right"
+lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.format_on_save = true
 lvim.transparent_window = true
 lvim.reload_config_on_save = true
