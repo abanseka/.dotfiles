@@ -5,3 +5,9 @@ gui:
       - "#323C41"
     selectedRangeBgColor:
       - "#323C41"
+  layout:
+    height: 1
+    width: 1
+    top: 1
+    left: 1
+    direction: "horizontal"

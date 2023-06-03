@@ -17,7 +17,7 @@ lvim.transparent_window = true
 lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
-lvim.builtin.nvimtree.setup.view.width = 50
+lvim.builtin.nvimtree.setup.view.width = 30
 
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.lsp.document_highlight = false

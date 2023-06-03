@@ -1,9 +1,18 @@
 # Get editor completions based on the config schema
-add_newline = true
 "$schema" = 'https://starship.rs/config-schema.json'
+format = """
+$username\
+$directory\
+$git_branch\
+$fill\
+$jobs $time\
+$line_break\
+$character"""
 
-[aws]
-disabled = true
+add_newline = true
+
+[fill]
+symbol = " "
 
 [directory]
 truncation_length = 1
@@ -13,9 +22,20 @@ truncation_length = 13
 truncation_symbol = ""
 
 [character]
-success_symbol = "[🍒](bold green)"
+success_symbol = "[  ](bold #D08B65)"
+error_symbol = "[  ](bold #C65F5F)"
 
 [username]
-format = '🐶 sly: '
 disabled = false
 show_always = true
+format = '[ $user](#C65F5F bold) '
+
+[jobs]
+symbol = ' '
+number_threshold = 4
+symbol_threshold = 0
+
+[time]
+disabled = false
+format = '[󰥔 $time ](#D08B65 bold) '
+time_format = '%T'
