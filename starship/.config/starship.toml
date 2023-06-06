@@ -5,7 +5,7 @@ $username\
 $directory\
 $git_branch\
 $fill\
-$jobs $time\
+$time\
 $line_break\
 $character"""
 
@@ -22,13 +22,13 @@ truncation_length = 13
 truncation_symbol = ""
 
 [character]
-success_symbol = "[  ](bold #D08B65)"
-error_symbol = "[  ](bold #C65F5F)"
+success_symbol = "[   ](bold #D08B65)"
+error_symbol = "[   ](bold #C65F5F)"
 
 [username]
 disabled = false
 show_always = true
-format = '[ $user](#C65F5F bold) '
+format = '[  $user](#C65F5F bold) '
 
 [jobs]
 symbol = ' '
@@ -37,5 +37,5 @@ symbol_threshold = 0
 
 [time]
 disabled = false
-format = '[󰥔 $time ](#D08B65 bold) '
+format = '[󰥔 $time](#D08B65 bold) '
 time_format = '%T'
