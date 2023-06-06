@@ -4,6 +4,7 @@ format = """
 $username\
 $directory\
 $git_branch\
+$git_status\
 $fill\
 $time\
 $line_break\
@@ -20,6 +21,21 @@ truncation_length = 1
 [git_branch]
 truncation_length = 13
 truncation_symbol = ""
+
+
+[git_status]
+format = """$all_status$ahead_behind"""
+conflicted = '[󱏫 ](bold #C65F5F)'
+ahead = '[󰤇 ](bold #C65F5F)'
+behind = '[󰴻 ](bold #D08B65)'
+diverged = '[ ](bold #C65F5F)'
+up_to_date = '[ ](bold #8CA589)'
+untracked = '[󱙑 ](bold #D08B65)'
+stashed = '[󰆓 ](bold #D08B65)'
+modified = '[󱓥 ](bold #D08B65)'
+staged = '[󰝒 ](bold #8CA589)'
+renamed = '[󰑕 ](bold #8CA589)'
+deleted = '[󰆴 ](bold #C65F5F)'
 
 [character]
 success_symbol = "[   ](bold #D08B65)"
