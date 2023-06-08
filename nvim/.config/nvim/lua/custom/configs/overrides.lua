@@ -84,7 +84,7 @@ M.nvimtree = {
 	},
 	view = {
 		float = {
-			enable = true,
+			enable = false,
 			open_win_config = {
 				border = "rounded",
 				width = 60,

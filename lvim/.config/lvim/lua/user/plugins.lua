@@ -5,7 +5,8 @@ lvim.plugins = {
   { 'rmagatti/goto-preview' },
   { "ggandor/lightspeed.nvim" },
   { "norcalli/nvim-colorizer.lua" },
-  { 'sindrets/diffview.nvim',     event = "BufRead" },
+  { "christoomey/vim-tmux-navigator", lazy = false },
+  { 'sindrets/diffview.nvim',         event = "BufRead" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

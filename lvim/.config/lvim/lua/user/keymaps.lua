@@ -28,4 +28,3 @@ lvim.builtin.which_key.mappings["gd"] = {
   d = { "<cmd>:DiffviewOpen<CR>", "open diff" },
   h = { "<cmd>:DiffviewFileHistory<CR>", "file history" },
 }
-
