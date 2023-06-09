@@ -92,7 +92,7 @@ M.telescope = {
 		["<leader>lw"] = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 
 		-- git
-		["<leadergj"] = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
+		["<leader>gj"] = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
 		["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
 		["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 		["<leader>gp"] = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
@@ -108,7 +108,7 @@ M.telescope = {
 	},
 }
 
----------------------------------------------- disabled --------------------------------------------------------------
+---------------------------------------------- disabled ------------------------------------
 M.disabled = {
 	plugin = true,
 	n = {

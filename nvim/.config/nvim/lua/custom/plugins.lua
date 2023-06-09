@@ -34,15 +34,13 @@ local plugins = {
 		end,
 	},
 	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			{
-				"jcdickinson/codeium.nvim",
-				config = function()
-					require("codeium").setup({})
-				end,
-			},
-		},
+		"Exafunction/codeium.vim",
+		lazy = false,
+		config = function()
+			vim.keymap.set("i", "<C-i>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true })
+		end,
 	},
 	{
 		"rmagatti/goto-preview",
