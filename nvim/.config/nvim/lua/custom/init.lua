@@ -10,7 +10,7 @@ autocmd("BufEnter", {
 	command = "set filetype=markdown",
 })
 
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
 vim.opt.termguicolors = true
 

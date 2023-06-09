@@ -34,13 +34,15 @@ local plugins = {
 		end,
 	},
 	{
-		"Exafunction/codeium.vim",
-		lazy = false,
-		config = function()
-			vim.keymap.set("i", "<C-i>", function()
-				return vim.fn["codeium#Accept"]()
-			end, { expr = true })
-		end,
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			{
+				"jcdickinson/codeium.nvim",
+				config = function()
+					require("codeium").setup({})
+				end,
+			},
+		},
 	},
 	{
 		"rmagatti/goto-preview",
@@ -75,8 +77,12 @@ local plugins = {
 		"akinsho/bufferline.nvim",
 		lazy = false,
 		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = overrides.bufferline,
+	},
+	{
+		"folke/trouble.nvim",
+		ft = "*",
+		opts = {},
 	},
 }
 
