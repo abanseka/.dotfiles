@@ -1,5 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/abanseka/.dotfiles
+- /home/abanseka/codeSandBox/go/gorss
+- /home/abanseka/archis/academy/academy-client-next
 startuppopupversion: 5
 customcommandshistory:
 - :noh

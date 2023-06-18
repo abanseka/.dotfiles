@@ -22,6 +22,9 @@ M.general = {
 
 		-- preview
 		["<leader>pd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition" },
+
+		-- rest
+		["<leader>rr"] = { "<cmd>lua require('rest-nvim').run()<CR>", "Run" },
 	},
 }
 
@@ -87,7 +90,7 @@ M.telescope = {
 		["<leader>sa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Afiles" },
 
 		-- diagnostics
-		["<leader>ls"] = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "symbols" },
+		["<leader>ls"] = { "<cmd>Telescope lsp_document_symbols<cr>", "symbols" },
 		["<leader>ld"] = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "BDiagnostics" },
 		["<leader>lw"] = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
 

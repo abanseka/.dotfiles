@@ -1,0 +1,7 @@
+{
+    "diagnostics.disable": [
+        "redundant-parameter",
+        "unused-function",
+        "need-check-nil"
+    ]
+}

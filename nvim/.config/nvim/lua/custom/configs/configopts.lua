@@ -8,6 +8,8 @@ configopts.on_attach = function(bufnr)
 	end
 
 	vim.keymap.set("n", "-", api.tree.change_root_to_parent, opts("Up"))
+	-- vim.keymap.set("n", "ll", api.node.open.edit, opts("Open"))
+	-- vim.keymap.set("n", "hh", api.node.navigate.parent_close, opts("Close Directory"))
 end
 
 return configopts

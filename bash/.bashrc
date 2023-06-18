@@ -124,6 +124,9 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
 
+# export go binaries
+export PATH="$HOME/go/bin/:$PATH"
+
 # auto completions
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion

@@ -1,10 +1,9 @@
 -- auto-commands 🔖
 lvim.autocommands = {
   {
-    "BufEnter", -- see `:h autocmd-events`
+    "BufEnter",
     {
-      -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
-      pattern = { "*.env", ".env*" }, -- see `:h autocmd-events`
+      pattern = { "*.env", ".env*" },
       command = "set syntax=erlang",
     },
   },
@@ -12,11 +11,22 @@ lvim.autocommands = {
 
 lvim.autocommands = {
   {
-    "BufEnter", -- see `:h autocmd-events`
+    "BufEnter",
     {
-      -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
-      pattern = { "*.mdx", "*.md" }, -- see `:h autocmd-events`
+      pattern = { "*.mdx", "*.md" },
       command = "set filetype=markdown",
     }
   }
+}
+
+lvim.autocommands = {
+  {
+    { "ColorScheme" },
+    {
+      pattern = "*",
+      callback = function()
+        vim.api.nvim_set_hl(0, "VertSplit", { bg = "#1E2327", fg = "#303436", underline = false, bold = true })
+      end,
+    },
+  },
 }

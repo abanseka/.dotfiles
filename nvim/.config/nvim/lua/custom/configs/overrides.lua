@@ -33,10 +33,7 @@ M.mason = {
 		"typescript-language-server",
 		"deno",
 		"prettier",
-
-		-- c/cpp stuf"n", "l", api.tree.expand_all, opts "Expand All"
-		"clangd",
-		"clang-format",
+		"cssls",
 
 		-- golang
 		"gopls",
@@ -47,9 +44,6 @@ M.mason = {
 }
 
 -- git support in nvimtree
-
-local gheight = vim.api.nvim_list_uis()[1].height
-local gwidth = vim.api.nvim_list_uis()[1].width
 M.nvimtree = {
 	on_attach = require("custom.configs.configopts").on_attach(),
 	git = {
@@ -85,14 +79,6 @@ M.nvimtree = {
 	view = {
 		float = {
 			enable = false,
-			open_win_config = {
-				border = "rounded",
-				width = 60,
-				height = 20,
-				-- to lazy to add centering logic here
-				row = (gheight - 20) * 0.5,
-				col = (gwidth - 60) * 0.5,
-			},
 		},
 	},
 }
@@ -111,13 +97,41 @@ M.bufferline = {
 			{
 				filetype = "NvimTree",
 				text = "",
-				separator = true,
+				separator = false,
 			},
 		},
 		show_buffer_close_icons = false,
 		show_close_icon = false,
 		separator_style = { " ", " " },
 		hover = { enabled = false },
+	},
+}
+
+-- local gheight = vim.api.nvim_list_uis()[1].height
+-- local gwidth = vim.api.nvim_list_uis()[1].width
+M.telescope = {
+	defaults = {
+		initial_mode = "insert",
+		layout_strategy = "vertical",
+		layout_config = {
+			height = 0.95,
+			width = 0.55,
+			vertical = {
+				mirror = true,
+				preview_cutoff = 0,
+			},
+		},
+	},
+	pickers = {
+		find_files = {
+			hidden = true,
+		},
+		live_grep = {
+			only_sort_text = true,
+		},
+		grep_string = {
+			only_sort_text = true,
+		},
 	},
 }
 

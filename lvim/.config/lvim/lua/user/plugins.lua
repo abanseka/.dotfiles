@@ -1,10 +1,7 @@
 lvim.plugins = {
   { "mattn/emmet-vim" },
-  { "sainnhe/everforest" },
   { "p00f/nvim-ts-rainbow" },
-  { 'rmagatti/goto-preview' },
-  { "ggandor/lightspeed.nvim" },
-  { "norcalli/nvim-colorizer.lua" },
+  { "sainnhe/everforest" },
   { "christoomey/vim-tmux-navigator", lazy = false },
   { 'sindrets/diffview.nvim',         event = "BufRead" },
   {
@@ -14,40 +11,40 @@ lvim.plugins = {
     end
   },
   {
-    'Exafunction/codeium.vim',
+    "Exafunction/codeium.vim",
+    lazy = false,
     config = function()
-      vim.keymap.set('i', '<leader-a>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-    end
+      vim.keymap.set("i", "<C-i>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+    end,
   },
   {
-    "goto-preview",
+    "rmagatti/goto-preview",
     config = function()
-      require('goto-preview').setup({
-        border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
+      require("goto-preview").setup({
+        height = 20,
         opacity = 0,
-        height = 20
+        stack_floating_preview_windows = true,
+        preview_window_title = { enable = false },
+        border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃" },
       })
-    end
+    end,
   },
   {
-    "folke/noice.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
+    "ggandor/leap.nvim",
+    lazy = false,
     config = function()
-      require("noice").setup({
-        active = false,
-        messages = { enabled = false },
-        lsp = {
-          progress = { enabled = false },
-          hover = { enabled = false },
-          signature = { enabled = false },
-          override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true,
-          },
-        },
-      }
-      )
-    end
+      require("leap").add_default_mappings()
+    end,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    lazy = false,
+    config = function()
+      require("rest-nvim").setup({
+        result_split_horizontal = true,
+      })
+    end,
   },
 }
