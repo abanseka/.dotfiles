@@ -19,7 +19,7 @@ symbol = " "
 truncation_length = 1
 
 [git_branch]
-truncation_length = 13
+truncation_length = 20
 truncation_symbol = ""
 
 
