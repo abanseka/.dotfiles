@@ -1,8 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/abanseka/.dotfiles
-- /home/abanseka/codeSandBox/go/gorss
+- /home/abanseka/archis/academy/academy-client-side
 - /home/abanseka/archis/academy/academy-client-next
+- /home/abanseka/codeSandBox/my-app
+- /home/abanseka/archis/lokum/client
+- /home/abanseka/Documents/projects/website
+- /home/abanseka/traineeProjects/seda/quizzical
+- /home/abanseka/traineeProjects/maruf/eCommerce-app
+- /home/abanseka/codeSandBox/go/gorss
 startuppopupversion: 5
 customcommandshistory:
 - :noh

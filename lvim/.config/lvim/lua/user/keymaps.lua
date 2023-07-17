@@ -5,7 +5,6 @@ local keymap = vim.api.nvim_set_keymap
 keymap("i", "kj", "<ESC>", opts)
 
 -- view
-lvim.builtin.which_key.mappings["vm"] = { "<cmd>:MarkdownPreviewToggle<CR>", "Preview" }
 lvim.builtin.which_key.mappings["vd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition" }
 lvim.builtin.which_key.mappings["vv"] = { "<cmd>vsplit<CR>", "vsplit" }
 lvim.builtin.which_key.mappings["vh"] = { "<cmd>split<CR>", "hsplit" }

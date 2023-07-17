@@ -1,17 +1,14 @@
 ------------------------ lvim options
 lvim.builtin.terminal.open_mapping = "<c-t>"
 lvim.format_on_save = true
-lvim.transparent_window = true
+lvim.transparent_window = false
 lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
 
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.lsp.document_highlight = false
 lvim.builtin.alpha.active = false
-lvim.builtin.project.active = false
 lvim.builtin.indentlines.active = false
-lvim.builtin.illuminate.active = false
 
 lvim.format_on_save = true
 lvim.builtin.treesitter.auto_install = true
@@ -90,3 +87,34 @@ lvim.builtin.which_key.setup = {
     border = "none"
   }
 }
+
+----------------------------------- formatting
+local present, null_ls = pcall(require, "null-ls")
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+if not present then
+  return
+end
+
+local b = null_ls.builtins
+
+local sources = {
+  b.formatting.prettier
+}
+
+null_ls.setup({
+  debug = true,
+  sources = sources,
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format()
+        end,
+      })
+    end
+  end,
+})
