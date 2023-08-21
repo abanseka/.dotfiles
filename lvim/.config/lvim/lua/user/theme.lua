@@ -27,16 +27,13 @@ local function cwd()
   return lastSubstring
 end
 
-local function trunc_str(str, len)
-  return string.sub(str, 1, len)
-end
 
-lvim.builtin.lualine.sections.lualine_c = {}
-lvim.builtin.lualine.sections.lualine_y = { components.filetype }
-lvim.builtin.lualine.sections.lualine_z = { components.encoding }
-lvim.builtin.lualine.sections.lualine_b = { components.diagnostics }
 lvim.builtin.lualine.sections.lualine_a = { function() return "" end, cwd }
-lvim.builtin.lualine.sections.lualine_x = { function() return "󰊢" end, trunc_str(components.branch[1], 10), }
+lvim.builtin.lualine.sections.lualine_b = { components.diagnostics }
+lvim.builtin.lualine.sections.lualine_c = {}
+lvim.builtin.lualine.sections.lualine_x = { components.diff }
+lvim.builtin.lualine.sections.lualine_z = { components.encoding }
+lvim.builtin.lualine.sections.lualine_y = { components.filetype }
 
 -- stylua: ignore
 local colors = {

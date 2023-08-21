@@ -29,12 +29,10 @@ lvim.builtin.breadcrumbs.options = {
 }
 
 ------------------------------- nvim options
-vim.g.user_emmet_mode = "n"
-vim.g.user_emmet_intall_globals = 0
-vim.g.user_emmet_leader_key = ","
 vim.opt.cursorline = false
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
+vim.opt.title = false
 vim.diagnostic.config({
   virtual_text = false,
 })

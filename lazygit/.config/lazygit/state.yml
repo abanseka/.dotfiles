@@ -1,15 +1,19 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/abanseka/.dotfiles
-- /home/abanseka/archis/academy/academy-client-side
-- /home/abanseka/archis/academy/academy-client-next
-- /home/abanseka/codeSandBox/my-app
-- /home/abanseka/archis/lokum/client
-- /home/abanseka/Documents/projects/website
-- /home/abanseka/traineeProjects/seda/quizzical
-- /home/abanseka/traineeProjects/maruf/eCommerce-app
-- /home/abanseka/codeSandBox/go/gorss
+    - /home/abanseka/.dotfiles
+    - /home/abanseka/archis/lokum/client
+    - /home/abanseka/traineeProjects/ayush/my-portfolio
+    - /home/abanseka/traineeProjects/saranya/Newstrapii
+    - /home/abanseka/codeSandBox/strapi/backend
+    - /home/abanseka/archis/lokum/cms
+    - /home/abanseka/traineeProjects/maruf/eCommerce-app
+    - /home/abanseka/Documents/projects/website
+    - /home/abanseka/codeSandBox/go/gorss
+    - /home/abanseka/archis/academy/academy-client-side
+    - /home/abanseka/archis/academy/academy-client-next
+    - /home/abanseka/codeSandBox/my-app
+    - /home/abanseka/traineeProjects/seda/quizzical
 startuppopupversion: 5
 customcommandshistory:
-- :noh
+    - :noh
 hidecommandlog: true

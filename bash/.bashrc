@@ -108,7 +108,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # set terminal title to cwd
-PROMPT_COMMAND='echo -ne "\033]0;$(basename ${HOSTNAME})\007"'
+PROMPT_COMMAND='echo -ne "\033]0; \a"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -130,6 +130,9 @@ export PATH="$HOME/go/bin/:$PATH"
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# kitty ssh fix
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
 eval "$(starship init bash)"
 function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}

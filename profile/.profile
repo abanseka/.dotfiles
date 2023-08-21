@@ -26,3 +26,6 @@ fi
 #     PATH="$HOME/.local/bin:$PATH"
 # fi
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#
+# go system wide path
+export PATH=$PATH:/usr/local/go/bin
