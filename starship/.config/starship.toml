@@ -25,26 +25,26 @@ truncation_symbol = ""
 
 [git_status]
 format = """$all_status$ahead_behind"""
-conflicted = '[󱏫 ](bold #B75D67)'
-ahead = '[󰤇 ](bold #B75D67)'
-behind = '[󰴻 ](bold #E6C075)'
-diverged = '[ ](bold #B75D67)'
-up_to_date = '[ ](bold #A3BE8C)'
-untracked = '[󱙑 ](bold #E6C075)'
-stashed = '[󰆓 ](bold #E6C075)'
-modified = '[󱓥 ](bold #E6C075)'
-staged = '[󰝒 ](bold #A3BE8C)'
-renamed = '[󰑕 ](bold #A3BE8C)'
-deleted = '[󰆴 ](bold #B75D67)'
+conflicted = '[󱏫 ](bold #C07A8D)'
+ahead = '[󰤇 ](bold #C07A8D)'
+behind = '[󰴻 ](bold #D8A657)'
+diverged = '[ ](bold #C07A8D)'
+up_to_date = '[ ](bold #818B4F)'
+untracked = '[󱙑 ](bold #D8A657)'
+stashed = '[󰆓 ](bold #D8A657)'
+modified = '[󱓥 ](bold #D8A657)'
+staged = '[󰝒 ](bold #818B4F)'
+renamed = '[󰑕 ](bold #818B4F)'
+deleted = '[󰆴 ](bold #C07A8D)'
 
 [character]
-success_symbol = "[   ](bold #E6C075)"
-error_symbol = "[   ](bold #B75D67)"
+success_symbol = "[   ](bold #D8A657)"
+error_symbol = "[   ](bold #C07A8D)"
 
 [username]
 disabled = false
 show_always = true
-format = '[  $user](#FF9698 bold) '
+format = '[  $user](#D3869b bold) '
 
 [jobs]
 symbol = ' '
@@ -53,5 +53,5 @@ symbol_threshold = 0
 
 [time]
 disabled = false
-format = '[󰥔 $time](#E6C075 bold) '
+format = '[󰥔 $time](#D8A657 bold) '
 time_format = '%T'

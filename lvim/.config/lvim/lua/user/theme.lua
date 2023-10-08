@@ -1,21 +1,40 @@
-lvim.colorscheme = "everforest"
+-- lvim.colorscheme = "everforest"
+lvim.colorscheme = "gruvbox-material"
 
-vim.g.everforest_background = 'soft'
+------------- everforest
 vim.g.everforest_current_word = "none"
+vim.g.everforest_background = 'hard'
 vim.g.everforest_ui_contrast = "low"
 vim.g.everforest_transparent_background = 1
 vim.g.everforest_disable_terminal_colors = 0
 
 vim.g.everforest_colors_override = {
-  bg2 = '#2D353A',
-  bg3 = '#2D353A',
-  bg4 = '#2D353A',
-  bg_dim = '#2D353A',
+  bg2 = '#282828',
+  bg3 = '#282828',
+  bg4 = '#282828',
+  bg_dim = '#282828',
 }
+
+------------- grubox
+vim.g.gruvbox_material_current_word = "grey background"
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_ui_contrast = "low"
+vim.g.gruvbox_material_visual = "green background"
+vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_disable_terminal_colors = 0
+
+vim.g.gruvbox_material_colors_override = {
+  bg2 = '#282828',
+  bg3 = '#282828',
+  bg4 = '#282828',
+  bg_dim = '#282828',
+}
+
+-------------------------------------------------------
 
 vim.opt_global.fillchars = {
   fold = " ",
-  eob = " ",  -- suppress ~ at EndOfBuffer
+  eob = " ", -- suppress ~ at EndOfBuffer
   diff = "░", -- alternatives = ⣿ ░ ─
 }
 
@@ -37,7 +56,7 @@ lvim.builtin.lualine.sections.lualine_y = { components.filetype }
 
 -- stylua: ignore
 local colors = {
-  color1 = "#2D353A",
+  color1 = "#282828",
   color2 = "#8CA589",
   color3 = "#D08B65",
   color4 = "#C65F5F",

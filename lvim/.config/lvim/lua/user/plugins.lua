@@ -1,8 +1,15 @@
 lvim.plugins = {
   { "p00f/nvim-ts-rainbow" },
   { "sainnhe/everforest" },
+  { "sainnhe/gruvbox-material" },
   { "christoomey/vim-tmux-navigator", lazy = false },
   { 'sindrets/diffview.nvim',         event = "BufRead" },
+  {
+    "andweeb/presence.nvim",
+    config = function()
+      require("presence").setup()
+    end
+  },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()

@@ -93,6 +93,8 @@ alias cat="batcat"
 alias ls="lsd"
 alias ll="ls -l"
 alias lg="lazygit"
+alias cl="clear"
+alias ei="exit"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
