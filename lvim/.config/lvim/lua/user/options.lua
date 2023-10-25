@@ -8,7 +8,7 @@ lvim.builtin.treesitter.rainbow.enable = true
 
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.alpha.active = false
-lvim.builtin.indentlines.active = true
+lvim.builtin.indentlines.active = false
 
 lvim.format_on_save = true
 lvim.builtin.treesitter.auto_install = true
@@ -38,6 +38,9 @@ vim.opt.tabstop = 2
 vim.diagnostic.config({
   virtual_text = true,
 })
+
+vim.o.conceallevel = 1
+vim.treesitter.language.register('markdown', 'neoai-output')
 
 ------------------------- plugin overrides --------------------------
 lvim.builtin.bufferline = {

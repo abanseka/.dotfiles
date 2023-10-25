@@ -15,3 +15,5 @@ lvim.builtin.which_key.mappings["vf"] = { "<cmd>DiffviewFileHistory%<CR>", "GFhi
 lvim.builtin.which_key.mappings["vg"] = { "<cmd>DiffviewOpen<CR>", "GDiff" }
 lvim.builtin.which_key.mappings["rr"] = { "<cmd>lua require('rest-nvim').run()<CR>", "httpRun" }
 lvim.builtin.which_key.mappings["ss"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "in buffer" }
+lvim.builtin.which_key.mappings["ai"] = { "<cmd> NeoAIToggle<CR>", "open prompt" }
+lvim.lsp.buffer_mappings.visual_mode["ac"] = { "<cmd> NeoAIContext<CR>", "code context" }

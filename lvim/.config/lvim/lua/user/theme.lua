@@ -1,14 +1,14 @@
 -- lvim.colorscheme = "everforest"
-lvim.colorscheme = "gruvbox-material"
+lvim.colorscheme                               = "gruvbox-material"
 
 ------------- everforest
-vim.g.everforest_current_word = "none"
-vim.g.everforest_background = 'hard'
-vim.g.everforest_ui_contrast = "low"
-vim.g.everforest_transparent_background = 1
-vim.g.everforest_disable_terminal_colors = 0
+vim.g.everforest_current_word                  = "none"
+vim.g.everforest_background                    = 'hard'
+vim.g.everforest_ui_contrast                   = "low"
+vim.g.everforest_transparent_background        = 1
+vim.g.everforest_disable_terminal_colors       = 0
 
-vim.g.everforest_colors_override = {
+vim.g.everforest_colors_override               = {
   bg2 = '#282828',
   bg3 = '#282828',
   bg4 = '#282828',
@@ -16,14 +16,17 @@ vim.g.everforest_colors_override = {
 }
 
 ------------- grubox
-vim.g.gruvbox_material_current_word = "grey background"
-vim.g.gruvbox_material_background = 'hard'
-vim.g.gruvbox_material_ui_contrast = "low"
-vim.g.gruvbox_material_visual = "green background"
-vim.g.gruvbox_material_transparent_background = 1
+vim.g.gruvbox_material_current_word            = "grey background"
+vim.g.gruvbox_material_background              = 'hard'
+vim.g.gruvbox_material_ui_contrast             = "low"
+vim.g.gruvbox_material_visual                  = "green background"
+vim.g.gruvbox_material_foreground              = "mix"
+vim.g.gruvbox_material_enable_bold             = 1
+vim.g.gruvbox_material_transparent_background  = 1
 vim.g.gruvbox_material_disable_terminal_colors = 0
+vim.g.gruvbox_material_dim_inactive_windows    = 1
 
-vim.g.gruvbox_material_colors_override = {
+vim.g.gruvbox_material_colors_override         = {
   bg2 = '#282828',
   bg3 = '#282828',
   bg4 = '#282828',
@@ -32,13 +35,13 @@ vim.g.gruvbox_material_colors_override = {
 
 -------------------------------------------------------
 
-vim.opt_global.fillchars = {
+vim.opt_global.fillchars                       = {
   fold = " ",
   eob = " ", -- suppress ~ at EndOfBuffer
   diff = "░", -- alternatives = ⣿ ░ ─
 }
 
-local components = require("lvim.core.lualine.components")
+local components                               = require("lvim.core.lualine.components")
 local function cwd()
   local path = vim.loop.cwd()
   local separator = package.config:sub(1, 1) -- get path separator

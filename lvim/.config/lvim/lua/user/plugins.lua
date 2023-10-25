@@ -92,5 +92,31 @@ lvim.plugins = {
       end
       lspconfig.emmet_ls.setup({ capabilities = capabilities })
     end,
+  },
+  {
+    "Bryley/neoai.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require("neoai").setup(
+        {
+
+          ui = {
+            output_popup_text = "󰗣 ",
+            input_popup_text = "󰌌 ",
+            width = 60,               -- As percentage eg. 40%
+            output_popup_height = 90, -- As percentage eg. 90%
+            submit = "<Enter>",       -- Key binding to submit the prompt
+          },
+          open_ai = {
+            api_key = {
+              env = "",
+              value = os.getenv("OPENAI_API_KEY"),
+            },
+          },
+        }
+      )
+    end,
   }
 }

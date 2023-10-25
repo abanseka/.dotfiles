@@ -95,6 +95,7 @@ alias ll="ls -l"
 alias lg="lazygit"
 alias cl="clear"
 alias ei="exit"
+alias tmn="tmux new"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -120,7 +121,6 @@ export PATH="~/.nvm/versions/node/v16.15.0/bin/node:$PATH"
 export PATH="~/.cargo/bin:$PATH"
 export PATH="~/.local/bin:$PATH"
 
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
@@ -135,6 +135,10 @@ fi
 
 # kitty ssh fix
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+# env variables
+export OPENAI_API_KEY=$(pass show neoai)
+
 
 eval "$(starship init bash)"
 function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
