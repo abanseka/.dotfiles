@@ -1,10 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
+    - /home/abanseka/Documents/projects/consoMeet
+    - /home/abanseka/archis/projects/furniro
+    - /home/abanseka/archis/projects/coral-buy
+    - /home/abanseka/archis/projects/tour-and-travel-app
+    - /home/abanseka/Documents/graph
     - /home/abanseka/traineeProjects/aykut/basketball-scoreboard
     - /home/abanseka/archis/lokum/client
-    - /home/abanseka/archis/projects/tour-and-travel-app
-    - /home/abanseka/Documents/projects/consoMeet
     - /home/abanseka/traineeProjects/anitha/hi-qu
     - /home/abanseka/archis/projects/landify-PT1
     - /home/abanseka/Documents/projects/website
@@ -19,7 +22,6 @@ recentrepos:
     - /home/abanseka/traineeProjects/maruf/eCommerce-app
     - /home/abanseka/archis/academy/academy-client-side
     - /home/abanseka/archis/academy/academy-client-next
-    - /home/abanseka/codeSandBox/my-app
 startuppopupversion: 5
 customcommandshistory:
     - :noh

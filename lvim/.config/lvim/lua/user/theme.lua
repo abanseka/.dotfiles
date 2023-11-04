@@ -1,6 +1,12 @@
--- lvim.colorscheme = "everforest"
-lvim.colorscheme                               = "gruvbox-material"
+if vim.fn.has('termguicolors') then
+  vim.o.termguicolors = true
+end
 
+vim.o.background                               = "dark"
+vim.g.gruvbox_material_background              = "soft"
+vim.g.gruvbox_material_better_performance      = 1
+
+lvim.colorscheme                               = "gruvbox-material"
 ------------- everforest
 vim.g.everforest_current_word                  = "none"
 vim.g.everforest_background                    = 'hard'
