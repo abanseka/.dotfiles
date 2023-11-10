@@ -5,7 +5,6 @@ local keymap = vim.api.nvim_set_keymap
 keymap("i", "kj", "<ESC>", opts)
 lvim.builtin.terminal.open_mapping = "<c-t>"
 
-
 -- view
 lvim.builtin.which_key.mappings["vd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition" }
 lvim.builtin.which_key.mappings["vv"] = { "<cmd>vsplit<CR>", "vsplit" }

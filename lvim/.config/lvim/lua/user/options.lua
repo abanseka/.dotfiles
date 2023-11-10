@@ -14,7 +14,7 @@ vim.treesitter.language.register('markdown', 'neoai-output')
 -------------------------------------------
 
 lvim.format_on_save = true
-lvim.transparent_window = false
+lvim.transparent_window = true
 lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true

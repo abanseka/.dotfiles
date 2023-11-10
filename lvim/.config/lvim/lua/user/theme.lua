@@ -5,8 +5,7 @@ vim.opt_global.fillchars                = {
 }
 
 -------------------------------------------------------
-lvim.colorscheme                        = "catppuccin-macchiato"
-lvim.builtin.lualine.options.theme      = "catppuccin"
+lvim.colorscheme                        = "catppuccin-mocha"
 lvim.builtin.lualine.style              = "default"
 -------------------------------------------------------
 local components                        = require("lvim.core.lualine.components")
@@ -19,5 +18,5 @@ lvim.builtin.lualine.sections.lualine_z = { components.encoding }
 
 lvim.builtin.lualine.options            = {
   component_separators = { left = '', right = '' },
-  section_separators = { left = '', right = '' },
+  section_separators = { left = '', right = '' },
 }

@@ -2,13 +2,47 @@ lvim.plugins = {
   -- theming
   { "p00f/nvim-ts-rainbow" },
   { "sainnhe/gruvbox-material" },
-  { "catppuccin/nvim",                      name = "catppuccin", priority = 1000 },
-  { "folke/tokyonight.nvim",                lazy = false,        priority = 1000, },
+  { "catppuccin/nvim",                name = "catppuccin", priority = 1000 },
+  { "folke/tokyonight.nvim",          lazy = false,        priority = 1000, },
 
   -- productivity enhancement
-  { "SonarSource/sonarlint-language-server" },
-  { "christoomey/vim-tmux-navigator",       lazy = false },
-  { 'sindrets/diffview.nvim',               event = "BufRead" },
+  { "christoomey/vim-tmux-navigator", lazy = false },
+  { 'sindrets/diffview.nvim',         event = "BufRead" },
+  {
+    "mfussenegger/nvim-lint",
+    event = {
+      "BufRead",
+      "BufNewFile",
+    },
+    config = function()
+      require('lint').linters_by_ft = {
+        javascript = { 'eslint_d' },
+        typescript = { 'eslint_d' },
+        typescriptreact = { 'eslint_d' },
+        javascriptreact = { 'eslint_d' },
+        css = { 'stylelint' },
+        scss = { 'stylelint' },
+        markdown = { 'markdownlint' },
+        json = { 'jsonlint' },
+        yaml = { 'yamllint' },
+        lua = { 'luacheck' },
+        go = { 'golangcilint' },
+        python = { 'pylint' },
+      }
+
+      local lint_augroup = vim.api.nvim_create_augroup("Linter", { clear = true })
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        group = lint_augroup,
+        callback = function()
+          require('lint').try_lint()
+        end
+      })
+
+      vim.keymap.set('n', '<leader>l', function()
+        require('lint').try_lint()
+      end, { desc = 'lint current file' })
+    end
+  },
   {
     "rmagatti/goto-preview",
     config = function()
