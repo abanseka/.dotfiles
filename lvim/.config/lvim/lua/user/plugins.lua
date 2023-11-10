@@ -1,30 +1,14 @@
 lvim.plugins = {
+  -- theming
   { "p00f/nvim-ts-rainbow" },
-  { "sainnhe/everforest" },
   { "sainnhe/gruvbox-material" },
-  { "christoomey/vim-tmux-navigator", lazy = false },
-  { 'sindrets/diffview.nvim',         event = "BufRead" },
-  {
-    "andweeb/presence.nvim",
-    config = function()
-      require("presence").setup()
-    end
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup()
-    end
-  },
-  {
-    "Exafunction/codeium.vim",
-    lazy = false,
-    config = function()
-      vim.keymap.set("i", "<C-i>", function()
-        return vim.fn["codeium#Accept"]()
-      end, { expr = true })
-    end,
-  },
+  { "catppuccin/nvim",                      name = "catppuccin", priority = 1000 },
+  { "folke/tokyonight.nvim",                lazy = false,        priority = 1000, },
+
+  -- productivity enhancement
+  { "SonarSource/sonarlint-language-server" },
+  { "christoomey/vim-tmux-navigator",       lazy = false },
+  { 'sindrets/diffview.nvim',               event = "BufRead" },
   {
     "rmagatti/goto-preview",
     config = function()
@@ -93,6 +77,29 @@ lvim.plugins = {
       lspconfig.emmet_ls.setup({ capabilities = capabilities })
     end,
   },
+  -- nice to have
+  {
+    "andweeb/presence.nvim",
+    config = function()
+      require("presence").setup()
+    end
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup()
+    end
+  },
+  -- ai stuff
+  {
+    "Exafunction/codeium.vim",
+    lazy = false,
+    config = function()
+      vim.keymap.set("i", "<C-i>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+    end,
+  },
   {
     "Bryley/neoai.nvim",
     dependencies = {
@@ -101,7 +108,6 @@ lvim.plugins = {
     config = function()
       require("neoai").setup(
         {
-
           ui = {
             output_popup_text = "󰗣 ",
             input_popup_text = "󰌌 ",

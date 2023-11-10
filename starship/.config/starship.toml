@@ -1,15 +1,6 @@
-# Get editor completions based on the config schema
-"$schema" = 'https://starship.rs/config-schema.json'
-format = """
-$username\
-$directory\
-$git_branch\
-$git_status\
-$fill\
-$time\
-$line_break\
-$character"""
 
+format = """ $directory$git_branch$git_status$fill$line_break$character"""
+palette = "catppuccin_mocha"
 add_newline = true
 
 [fill]
@@ -25,33 +16,45 @@ truncation_symbol = ""
 
 [git_status]
 format = """$all_status$ahead_behind"""
-conflicted = '[󱏫 ](bold #C07A8D)'
-ahead = '[󰤇 ](bold #C07A8D)'
-behind = '[󰴻 ](bold #D8A657)'
-diverged = '[ ](bold #C07A8D)'
-up_to_date = '[ ](bold #818B4F)'
-untracked = '[󱙑 ](bold #D8A657)'
-stashed = '[󰆓 ](bold #D8A657)'
-modified = '[󱓥 ](bold #D8A657)'
-staged = '[󰝒 ](bold #818B4F)'
-renamed = '[󰑕 ](bold #818B4F)'
-deleted = '[󰆴 ](bold #C07A8D)'
+conflicted = '[󱏫 ](bold #f38ba8)'
+ahead = '[󰤇 ](bold #f38ba8)'
+behind = '[󰴻 ](bold #f9e2af)'
+diverged = '[ ](bold #cba6f7)'
+up_to_date = '[ ](bold #a6e3a1)'
+untracked = '[󱙑 ](bold #f9e2af)'
+stashed = '[󰆓 ](bold #89b4fa)'
+modified = '[󱓥 ](bold #f9e2af)'
+staged = '[󰝒 ](bold #94e2d5)'
+renamed = '[󰑕 ](bold #f2cdcd)'
+deleted = '[󰆴 ](bold #f38ba8)'
 
 [character]
-success_symbol = "[   ](bold #D8A657)"
-error_symbol = "[   ](bold #C07A8D)"
+success_symbol = '[➜](bold green) '
 
-[username]
-disabled = false
-show_always = true
-format = '[  $user](#D3869b bold) '
-
-[jobs]
-symbol = ' '
-number_threshold = 4
-symbol_threshold = 0
-
-[time]
-disabled = false
-format = '[󰥔 $time](#D8A657 bold) '
-time_format = '%T'
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

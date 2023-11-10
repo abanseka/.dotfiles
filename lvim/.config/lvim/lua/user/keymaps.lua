@@ -3,6 +3,8 @@ lvim.leader = "space"
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 keymap("i", "kj", "<ESC>", opts)
+lvim.builtin.terminal.open_mapping = "<c-t>"
+
 
 -- view
 lvim.builtin.which_key.mappings["vd"] = { "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Definition" }
@@ -15,5 +17,5 @@ lvim.builtin.which_key.mappings["vf"] = { "<cmd>DiffviewFileHistory%<CR>", "GFhi
 lvim.builtin.which_key.mappings["vg"] = { "<cmd>DiffviewOpen<CR>", "GDiff" }
 lvim.builtin.which_key.mappings["rr"] = { "<cmd>lua require('rest-nvim').run()<CR>", "httpRun" }
 lvim.builtin.which_key.mappings["ss"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "in buffer" }
-lvim.builtin.which_key.mappings["ai"] = { "<cmd> NeoAIToggle<CR>", "open prompt" }
-lvim.lsp.buffer_mappings.visual_mode["ac"] = { "<cmd> NeoAIContext<CR>", "code context" }
+lvim.builtin.which_key.mappings["ai"] = { "<cmd>NeoAIToggle<CR>", "open prompt" }
+lvim.builtin.which_key.vmappings["ac"] = { "<cmd>NeoAIContextOpen<CR>", "code context" }
