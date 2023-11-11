@@ -1,3 +1,6 @@
+local vim                               = vim
+local lvim                              = lvim
+
 vim.opt_global.fillchars                = {
   fold = " ",
   eob = " ", -- suppress ~ at EndOfBuffer

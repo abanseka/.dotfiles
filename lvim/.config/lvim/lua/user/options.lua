@@ -1,3 +1,6 @@
+local lvim = lvim
+local vim = vim
+
 vim.opt.cursorline = false
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
@@ -5,7 +8,7 @@ vim.opt.title = false
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
 })
 
 vim.o.conceallevel = 1

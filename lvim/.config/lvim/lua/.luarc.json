@@ -2,6 +2,7 @@
     "diagnostics.disable": [
         "redundant-parameter",
         "unused-function",
-        "need-check-nil"
+        "need-check-nil",
+        "unused-local"
     ]
 }

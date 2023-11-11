@@ -1,10 +1,22 @@
+format = """
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$line_break\
+$character\
+"""
 
-format = """ $directory$git_branch$git_status$fill$line_break$character"""
 palette = "catppuccin_mocha"
 add_newline = true
 
 [fill]
 symbol = " "
+
+[hostname]
+ssh_only = false
+disabled = false
+format = ' [$hostname |](bold #f38ba8) '
 
 [directory]
 truncation_length = 1
@@ -13,6 +25,8 @@ truncation_length = 1
 truncation_length = 20
 truncation_symbol = ""
 
+[character]
+success_symbol = '[󱞪](bold green) '
 
 [git_status]
 format = """$all_status$ahead_behind"""
@@ -28,8 +42,6 @@ staged = '[󰝒 ](bold #94e2d5)'
 renamed = '[󰑕 ](bold #f2cdcd)'
 deleted = '[󰆴 ](bold #f38ba8)'
 
-[character]
-success_symbol = '[➜](bold green) '
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
