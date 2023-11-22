@@ -62,14 +62,18 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
+# use nala in place of apt
+apt() { 
+  command nala "$@"
+}
+sudo() {
+  if [ "$1" = "apt" ]; then
+    shift
+    command sudo nala "$@"
+  else
+    command sudo "$@"
+  fi
+}
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -124,6 +128,7 @@ export PATH="~/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
+export PATH="$HOME/.local/share/eww/target/release:$PATH"
 
 # export go binaries
 export PATH="$HOME/go/bin/:$PATH"
@@ -142,3 +147,4 @@ export OPENAI_API_KEY=$(pass show neoai)
 
 eval "$(starship init bash)"
 function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
+. "$HOME/.cargo/env"

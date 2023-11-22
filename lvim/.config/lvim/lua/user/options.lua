@@ -1,4 +1,3 @@
-local lvim = lvim
 local vim = vim
 
 vim.opt.cursorline = false
@@ -22,6 +21,6 @@ lvim.reload_config_on_save = true
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.auto_install = true
-
-lvim.builtin.alpha.active = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.alpha.mode = "dashboard"
+lvim.builtin.alpha.dashboard.section.header.val = { "󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 " }

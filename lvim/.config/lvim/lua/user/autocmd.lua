@@ -2,8 +2,10 @@
 lvim.autocommands = {
   {
     "BufEnter",
+    "BufWinEnter",
+    "Filetype",
     {
-      pattern = { "*.env", ".env*" },
+      pattern = { "*.env", ".env.*" },
       command = "set syntax=erlang",
     },
   },

@@ -29,3 +29,4 @@ fi
 #
 # go system wide path
 export PATH=$PATH:/usr/local/go/bin
+. "$HOME/.cargo/env"

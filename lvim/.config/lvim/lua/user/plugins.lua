@@ -19,7 +19,6 @@ lvim.plugins = {
 
       lint.linters_by_ft = {
         javascript = { 'eslint_d' },
-        typescript = { 'eslint_d' },
         typescriptreact = { 'eslint_d' },
         javascriptreact = { 'eslint_d' },
         css = { 'stylelint' },
@@ -33,17 +32,11 @@ lvim.plugins = {
       }
 
       local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
       vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-        group = lint_augroup,
         callback = function()
           lint.try_lint()
         end,
       })
-
-      vim.keymap.set("n", "<leader>l", function()
-        lint.try_lint()
-      end, { desc = "Trigger linting for current file" })
     end
   },
   {
@@ -113,6 +106,46 @@ lvim.plugins = {
       lspconfig.emmet_ls.setup({ capabilities = capabilities })
     end,
   },
+  {
+    'stevearc/conform.nvim',
+    lazy = true,
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local conform = require("conform")
+
+      conform.setup({
+        formatter_by_ft = {
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescriptreact = { "prettier" },
+          svelte = { "prettier" },
+          css = { "prettier" },
+          html = { "prettier" },
+          json = { "prettier" },
+          yaml = { "prettier" },
+          markdown = { "prettier" },
+          graphql = { "prettier" },
+          lua = { "stylua" },
+          go = { "gopls" },
+          python = { "isort", "black" },
+        },
+        format_on_save = {
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 1000,
+        }
+      })
+
+      vim.keymap.set({ "n", "v" }, "<leader>lf", function()
+        conform.format({
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 1000,
+        })
+      end, { desc = "Format file or range (in visual mode)" })
+    end
+  },
   -- nice to have
   {
     "andweeb/presence.nvim",
@@ -138,9 +171,7 @@ lvim.plugins = {
   },
   {
     "Bryley/neoai.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-    },
+    dependencies = { "MunifTanjim/nui.nvim" },
     config = function()
       require("neoai").setup(
         {
