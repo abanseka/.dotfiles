@@ -1,5 +1,3 @@
-local vim = vim
-
 vim.opt.cursorline = false
 vim.opt.cmdheight = 0
 vim.opt.laststatus = 3
@@ -11,7 +9,6 @@ vim.diagnostic.config({
 })
 
 vim.o.conceallevel = 1
-vim.treesitter.language.register('markdown', 'neoai-output')
 
 -------------------------------------------
 
@@ -22,5 +19,4 @@ lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.alpha.dashboard.section.header.val = { "󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 󰔲 " }
+lvim.builtin.alpha.active = false

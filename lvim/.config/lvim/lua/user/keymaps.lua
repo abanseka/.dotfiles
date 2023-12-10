@@ -23,7 +23,18 @@ lvim.builtin.which_key.mappings["vf"] = { "<cmd>DiffviewFileHistory%<CR>", "GFhi
 lvim.builtin.which_key.mappings["vg"] = { "<cmd>DiffviewOpen<CR>", "GDiff" }
 lvim.builtin.which_key.mappings["rr"] = { "<cmd>lua require('rest-nvim').run()<CR>", "httpRun" }
 lvim.builtin.which_key.mappings["ss"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "in buffer" }
-lvim.builtin.which_key.mappings["ao"] = { "<cmd>NeoAI<CR>", "open prompt" }
-lvim.builtin.which_key.mappings["ak"] = { "<cmd>NeoAIClose<CR>", "close prompt" }
-lvim.builtin.which_key.mappings["ac"] = { "<cmd>NeoAIContextOpen<CR>", "context" }
-lvim.builtin.which_key.vmappings["ai"] = { "<cmd>put c<CR>", "last output" }
+
+lvim.builtin.which_key.mappings["a"] = {
+  name = "ChatGPT",
+  o = { "<cmd>ChatGPT<CR>", "open" },
+  c = { "<C-c>", "close" },
+  e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
+  k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
+  d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
+  t = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
+  r = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
+  s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
+  f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
+  x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
+  a = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+}

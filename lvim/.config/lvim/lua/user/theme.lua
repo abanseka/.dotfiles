@@ -1,6 +1,3 @@
-local vim                               = vim
-local lvim                              = lvim
-
 vim.opt_global.fillchars                = {
   fold = " ",
   eob = " ", -- suppress ~ at EndOfBuffer
@@ -8,7 +5,8 @@ vim.opt_global.fillchars                = {
 }
 
 -------------------------------------------------------
-lvim.colorscheme                        = "catppuccin-mocha"
+lvim.colorscheme                        = "catppuccin"
+lvim.builtin.lualine.options.theme      = "catppuccin"
 lvim.builtin.lualine.style              = "default"
 -------------------------------------------------------
 local components                        = require("lvim.core.lualine.components")

@@ -53,7 +53,6 @@ lvim.builtin.bufferline = {
 
 lvim.builtin.nvimtree.setup.renderer.root_folder_label = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.folder_arrow = false
-lvim.builtin.nvimtree.setup.renderer.indent_markers.enable = true
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs = {
   folder = {
     default = " ",
@@ -78,6 +77,7 @@ lvim.builtin.which_key.setup = {
   }
 }
 
+lvim.builtin.indentlines.active = false
 lvim.builtin.indentlines.options = {
   show_current_context    = false,
   show_first_indent_level = false,

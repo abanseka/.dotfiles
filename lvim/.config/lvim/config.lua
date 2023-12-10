@@ -4,7 +4,6 @@ local function reload(name)
 end
 
 reload("user.options")
-reload("user.autocmd")
 reload("user.theme")
 reload("user.keymaps")
 reload("user.plugins")

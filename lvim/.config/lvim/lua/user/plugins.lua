@@ -1,10 +1,30 @@
 lvim.plugins = {
   -- theming
   { "p00f/nvim-ts-rainbow" },
-  { "sainnhe/gruvbox-material" },
-  { "catppuccin/nvim",                name = "catppuccin", priority = 1000 },
-  { "folke/tokyonight.nvim",          lazy = false,        priority = 1000, },
-
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        background = {     -- :h background
+          light = "latte",
+          dark = "mocha",
+        },
+        transparent_background = true,
+        show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+        term_colors = true,
+        dim_inactive = {
+          enabled = false,
+          shade = "dark",
+          percentage = 0.15,
+        },
+        no_italic = false, -- Force no italic
+        no_bold = false,   -- Force no bold
+      })
+    end
+  },
   -- productivity enhancement
   { "christoomey/vim-tmux-navigator", lazy = false },
   { 'sindrets/diffview.nvim',         event = "BufRead" },
@@ -26,7 +46,6 @@ lvim.plugins = {
         markdown = { 'markdownlint' },
         json = { 'jsonlint' },
         yaml = { 'yamllint' },
-        lua = { 'luacheck' },
         go = { 'golangcilint' },
         python = { 'pylint' },
       }
@@ -121,6 +140,7 @@ lvim.plugins = {
           typescriptreact = { "prettier" },
           svelte = { "prettier" },
           css = { "prettier" },
+          scss = { "prettier" },
           html = { "prettier" },
           json = { "prettier" },
           yaml = { "prettier" },
@@ -137,7 +157,7 @@ lvim.plugins = {
         }
       })
 
-      vim.keymap.set({ "n", "v" }, "<leader>lf", function()
+      vim.keymap.set({ "n", "v" }, "<leader>mp", function()
         conform.format({
           lsp_fallback = true,
           async = false,
@@ -170,26 +190,17 @@ lvim.plugins = {
     end,
   },
   {
-    "Bryley/neoai.nvim",
-    dependencies = { "MunifTanjim/nui.nvim" },
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
     config = function()
-      require("neoai").setup(
-        {
-          ui = {
-            output_popup_text = "󰗣 ",
-            input_popup_text = "󰌌 ",
-            width = 60,               -- As percentage eg. 40%
-            output_popup_height = 90, -- As percentage eg. 90%
-            submit = "<Enter>",       -- Key binding to submit the prompt
-          },
-          open_ai = {
-            api_key = {
-              env = "",
-              value = os.getenv("OPENAI_API_KEY"),
-            },
-          },
-        }
-      )
+      require("chatgpt").setup({
+        api_key_cmd = os.getenv("OPENAI_API_KEY"),
+      })
     end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
   }
 }
