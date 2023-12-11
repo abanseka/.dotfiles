@@ -1,5 +1,5 @@
 vim.opt.cursorline = false
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
 vim.opt.laststatus = 3
 vim.opt.title = false
 vim.opt.shiftwidth = 2
