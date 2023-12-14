@@ -4,5 +4,9 @@
         "unused-function",
         "need-check-nil",
         "unused-local"
+    ],
+    "diagnostics.globals": [
+        "vim",
+        "lvim"
     ]
 }
