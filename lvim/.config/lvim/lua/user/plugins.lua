@@ -163,4 +163,64 @@ lvim.plugins = {
 			"nvim-telescope/telescope.nvim",
 		},
 	},
+	-- lsp
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		branch = "v3.x",
+		dependencies = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "L3MON4D3/LuaSnip" },
+		},
+		config = function()
+			vim.g.lsp_zero_extend_lspconfig = 0
+			local lspconfig = require("lspconfig")
+			local lsp_zero = require("lsp-zero").preset({})
+			lsp_zero.extend_lspconfig()
+
+			lsp_zero.on_attach(function(client, bufnr)
+				lsp_zero.default_keymaps({ buffer = bufnr })
+			end)
+
+			local servers = {
+				"lua_ls",
+				"cssls",
+				"tailwindcss",
+				"stylelint_lsp",
+				"cssmodules_ls",
+				"html",
+				"tsserver",
+				"gopls",
+			}
+
+			for _, lsp in ipairs(servers) do
+				lspconfig[lsp].setup({})
+			end
+
+			--cmp
+			local cmp = require("cmp")
+			local cmp_format = lsp_zero.cmp_format()
+
+			cmp.setup({
+				sources = {
+					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
+					{ name = "buffer" },
+					{ name = "path" },
+				},
+
+				formatting = {
+					fields = { "abbr", "kind", "menu" },
+					format = require("lspkind").cmp_format({
+						mode = "symbol",
+						maxwidth = 50,
+						ellipsis_char = "...",
+					}),
+				},
+			})
+		end,
+	},
 }
