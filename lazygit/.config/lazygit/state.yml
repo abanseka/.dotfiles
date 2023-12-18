@@ -2,8 +2,9 @@ lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
     - /home/abanseka/.config/nvim
-    - /home/abanseka/archis/projects/furniro
     - /home/abanseka/archis/projects/coral-buy
+    - /home/abanseka/Documents/projects/gorss
+    - /home/abanseka/archis/projects/furniro
     - /home/abanseka/Documents/projects/Mern-app/mern-client
     - /home/abanseka/codeSandBox/react-sandbox-ts
     - /home/abanseka/scratchFolder
@@ -17,7 +18,6 @@ recentrepos:
     - /home/abanseka/archis/projects/tour-and-travel-app
     - /home/abanseka/Documents/graph
     - /home/abanseka/archis/projects/landify-PT1
-    - /home/abanseka/Documents/projects/gorss
 startuppopupversion: 5
 customcommandshistory:
     - :noh
