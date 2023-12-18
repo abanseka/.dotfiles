@@ -167,38 +167,14 @@ lvim.plugins = {
 	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v3.x",
-		dependencies = {
-			-- LSP Support
-			{ "neovim/nvim-lspconfig" },
-			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "L3MON4D3/LuaSnip" },
-		},
 		config = function()
-			vim.g.lsp_zero_extend_lspconfig = 0
-			local lspconfig = require("lspconfig")
-			local lsp_zero = require("lsp-zero").preset({})
-			lsp_zero.extend_lspconfig()
+			local lsp_zero = require("lsp-zero")
 
-			lsp_zero.on_attach(function(client, bufnr)
-				lsp_zero.default_keymaps({ buffer = bufnr })
-			end)
-
-			local servers = {
-				"lua_ls",
-				"cssls",
-				"tailwindcss",
-				"stylelint_lsp",
-				"cssmodules_ls",
-				"html",
-				"tsserver",
-				"gopls",
-			}
-
-			for _, lsp in ipairs(servers) do
-				lspconfig[lsp].setup({})
-			end
+			require("mason-lspconfig").setup({
+				handlers = {
+					lsp_zero.default_setup,
+				},
+			})
 
 			--cmp
 			local cmp = require("cmp")

@@ -9,6 +9,7 @@ vim.diagnostic.config({
 })
 
 vim.o.conceallevel = 1
+vim.g.lsp_zero_extend_lspconfig = 0
 
 -------------------------------------------
 
@@ -22,9 +23,30 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.alpha.active = false
 
 --------------------------------------------
--- formatting
 local formatters = require("lvim.lsp.null-ls.formatters")
+local lspconfig = require("lspconfig")
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
+-- formatting
 formatters.setup({
 	{ name = "prettier" },
 	{ name = "stylua" },
 })
+
+local servers = {
+	"lua_ls",
+	"cssls",
+	"tailwindcss",
+	"stylelint_lsp",
+	"cssmodules_ls",
+	"html",
+	"tsserver",
+	"gopls",
+}
+
+local capabilities = cmp_nvim_lsp.default_capabilities()
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+	})
+end

@@ -91,15 +91,18 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias v="nvim"
 alias lv="lvim"
+alias v="nvim"
 alias cat="batcat"
 alias ls="lsd"
 alias ll="ls -l"
 alias lg="lazygit"
 alias cl="clear"
 alias ei="exit"
-alias tmn="tmux new"
+alias t="tmux new -s"
+alias tl="tmux ls"
+alias ta="tmux a -t"
+alias td="tmux -ds"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -128,7 +131,6 @@ export PATH="~/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
-export PATH="$HOME/.local/share/eww/target/release:$PATH"
 
 # export go binaries
 export PATH="$HOME/go/bin/:$PATH"
