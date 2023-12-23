@@ -16,8 +16,34 @@ return {
 				no_italic = true,
 				no_bold = true,
 			})
+		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		priority = 1000,
+		config = function()
+			require("tokyonight").setup({
+				style = "moon",
+				light_style = "day",
+				transparent = true,
+				terminal_colors = true,
+				styles = {
+					comments = { italic = false },
+					keywords = { italic = false },
+					functions = {},
+					variables = {},
+					sidebars = "transparent",
+					floats = "transparent",
+				},
+				sidebars = {},
+				day_brightness = 0.3,
+				hide_inactive_statusline = true,
+				dim_inactive = false,
+				lualine_bold = true,
+			})
 
-			vim.cmd.colorscheme("catppuccin")
+			vim.cmd.colorscheme("tokyonight")
+			-- vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{

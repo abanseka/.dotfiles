@@ -30,7 +30,8 @@ keymap.set("n", "<leader>vf", "<cmd>DiffviewFileHistory%<CR>", opts)
 keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
 
 --nvim
-keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/lua/sly/core/init.lua<cr>", opts)
+keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
+keymap.set("n", "<leader>nf", "<cmd>ene<cr>", opts)
 
 -- ai
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)

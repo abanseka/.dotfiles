@@ -101,7 +101,7 @@ alias ei="exit"
 alias t="tmux new -s"
 alias tl="tmux ls"
 alias ta="tmux a -t"
-alias td="tmux -ds"
+alias td="tmux new -ds"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

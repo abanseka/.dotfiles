@@ -31,6 +31,7 @@ return {
 		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
+				prompt_position = "top",
 				prompt_prefix = "󱤇  ",
 				selection_caret = "󰜴 ",
 				buffer_previewer_maker = new_maker,
@@ -38,8 +39,8 @@ return {
 					"node_modules/*",
 					".git/*",
 				},
-				layout_strategy = "bottom_pane",
-				sorting_strategy = "ascending",
+				layout_strategy = "horizontal",
+				sorting_strategy = "descending",
 				layout_config = {
 					height = function(_, max_lines, _)
 						return math.min(max_lines, 25)
@@ -79,15 +80,6 @@ return {
 					override_generic_sorter = true, -- override the generic sorter
 					override_file_sorter = true, -- override the file sorter
 					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-				},
-			},
-			layout_config = {
-				preview_width = 0.6,
-				preview_cutoff = 120,
-				horizontal = {
-					preview_width = function(_, cols, _)
-						return math.floor(cols * 0.6)
-					end,
 				},
 			},
 		})

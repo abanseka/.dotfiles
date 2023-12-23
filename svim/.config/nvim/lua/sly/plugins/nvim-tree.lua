@@ -51,9 +51,9 @@ return {
 				number = false,
 				relativenumber = false,
 				signcolumn = "yes",
-				width = 35,
+				width = 40,
 				float = {
-					enable = true,
+					enable = false,
 					quit_on_focus_loss = true,
 					open_win_config = {
 						relative = "editor",

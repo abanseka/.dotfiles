@@ -42,7 +42,7 @@ return {
 				-- can also be a table containing 2 custom separators
 				-- [focused and unfocused]. eg: { '|', '|' }
 				separator_style = { " ", " " },
-				always_show_bufferline = false,
+				always_show_bufferline = true,
 				hover = {
 					enabled = false,
 					delay = 200,

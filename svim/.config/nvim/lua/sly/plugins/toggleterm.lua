@@ -13,15 +13,14 @@ return {
 			lazygit:toggle()
 		end
 
-		vim.api.nvim_set_keymap("n", "<leader>tt", ":ToggleTerm direction=horizontal<CR>", opt)
-		vim.api.nvim_set_keymap("n", "<leader>tv", ":ToggleTerm direction=vertical<CR>", opt)
-		vim.api.nvim_set_keymap("n", "<leader>tf", ":ToggleTerm direction=float<CR>", opt)
-		vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("n", "<leader>ta", ":ToggleTermToggleAll<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>exe v:count1 . 'ToggleTerm'<CR>", opt)
+		vim.api.nvim_set_keymap("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", opt)
+		vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", opt)
 
+		---@diagnostic disable-next-line: duplicate-set-field
 		function _G.set_terminal_keymaps()
 			local opts = { buffer = 0 }
-			vim.keymap.set("t", "kj", [[<C-\><C-n>]], opts)
+			vim.keymap.set("t", "ee", [[<C-\><C-n>]], opts)
 		end
 
 		vim.cmd("autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()")

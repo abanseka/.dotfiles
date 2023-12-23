@@ -1,11 +1,5 @@
 -- plugins requiring little to no configuration
 return {
-	{
-		"lewis6991/impatient.nvim",
-		config = function()
-			require("impatient")
-		end,
-	},
 	"christoomey/vim-tmux-navigator",
 	{ "sindrets/diffview.nvim", event = "BufRead" },
 	{
