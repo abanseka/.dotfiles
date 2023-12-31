@@ -32,54 +32,34 @@ return {
 		telescope.setup({
 			defaults = {
 				prompt_position = "top",
-				prompt_prefix = "󱤇  ",
-				selection_caret = "󰜴 ",
+				prompt_prefix = "󱡓  ",
+				selection_caret = "  ",
 				buffer_previewer_maker = new_maker,
 				file_ignore_patterns = {
 					"node_modules/*",
 					".git/*",
+					"*.png",
+					"*.jpg",
+					"*.jpeg",
+					"*.gif",
+					"*.bmp",
+					"*.ico",
+					"*.svg",
 				},
 				layout_strategy = "horizontal",
-				sorting_strategy = "descending",
+				sorting_strategy = "ascending",
 				layout_config = {
-					height = function(_, max_lines, _)
-						return math.min(max_lines, 25)
-					end,
-					width = function(_, max_columns, _)
-						return math.min(math.floor(max_columns * 98), 100)
-					end,
-					bottom_pane = {
-						preview_cutoff = 1,
+					width = 1000, -- Set a fixed width for the Telescope window
+					height = 20, -- Set a fixed height for the Telescope window
+					prompt_position = "top", -- Position the prompt at the top
+					horizontal = {
+						width = 0.9, -- Set the width ratio for horizontal layout
+						preview_cutoff = 80, -- Set the character limit for preview
 					},
-				},
-			},
-			pickers = {
-				find_files = {
-					hidden = true,
-				},
-				live_grep = {
-					only_sort_text = true,
-				},
-				grep_string = {
-					only_sort_text = true,
-				},
-				buffers = {
-					initial_mode = "normal",
-				},
-				git_files = {
-					hidden = true,
-					show_untracked = true,
-				},
-				colorscheme = {
-					enable_preview = true,
-				},
-			},
-			extensions = {
-				fzf = {
-					fuzzy = true, -- false will only do exact matching
-					override_generic_sorter = true, -- override the generic sorter
-					override_file_sorter = true, -- override the file sorter
-					case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+					vertical = {
+						width = 0.9, -- Set the width ratio for vertical layout
+						preview_cutoff = 80, -- Set the character limit for preview
+					},
 				},
 			},
 		})

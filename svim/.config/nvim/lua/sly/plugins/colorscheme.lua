@@ -1,30 +1,10 @@
 return {
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				background = {
-					light = "latte",
-					dark = "mocha",
-				},
-				transparent_background = true,
-				show_end_of_buffer = false,
-				term_colors = true,
-				no_italic = true,
-				no_bold = true,
-			})
-		end,
-	},
-	{
 		"folke/tokyonight.nvim",
 		priority = 1000,
 		config = function()
 			require("tokyonight").setup({
-				style = "moon",
-				light_style = "day",
+				style = "night",
 				transparent = true,
 				terminal_colors = true,
 				styles = {

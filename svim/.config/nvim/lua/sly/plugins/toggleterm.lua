@@ -3,7 +3,7 @@ return {
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			size = 20,
+			size = 14,
 		})
 		local opt = { noremap = true, silent = true }
 		local Terminal = require("toggleterm.terminal").Terminal

@@ -36,4 +36,8 @@ return {
 			{ "<leader>u", "<cmd>lua require('undotree').toggle()<cr>" },
 		},
 	},
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+	},
 }

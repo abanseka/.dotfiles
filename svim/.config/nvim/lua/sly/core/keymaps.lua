@@ -14,6 +14,12 @@ keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<cr>", opts)
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
 
+-- lazy
+keymap.set("n", "<leader>ps", "<cmd>Lazy sync<CR>", opts)
+keymap.set("n", "<leader>pu", "<cmd>Lazy update<CR>", opts)
+keymap.set("n", "<leader>pi", "<cmd>Lazy install<CR>", opts)
+keymap.set("n", "<leader>pc", "<cmd>Lazy clean<CR>", opts)
+
 -- move
 keymap.set("n", "<C-h>", "<C-w>h", opts)
 keymap.set("n", "<C-j>", "<C-w>j", opts)

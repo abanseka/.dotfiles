@@ -149,6 +149,3 @@ export OPENAI_API_KEY=$(pass show neoai)
 eval "$(starship init bash)"
 function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
 . "$HOME/.cargo/env"
-
-# tergminal greeter
-fm6000
