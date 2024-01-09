@@ -9,8 +9,15 @@ vim.api.nvim_set_keymap("n", "j", "gj", opts)
 vim.api.nvim_set_keymap("n", "k", "gk", opts)
 keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap.set("n", "<leader>Q", "<cmd>q!<CR>", opts)
+
+-- no highlight
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
+
+-- rest
 keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<cr>", opts)
+
+-- adust indentation
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
 

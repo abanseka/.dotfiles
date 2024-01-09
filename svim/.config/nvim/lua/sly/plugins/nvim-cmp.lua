@@ -21,6 +21,7 @@ return {
 			},
 			sources = {
 				{ name = "nvim_lsp" },
+				{ name = "codeium" },
 				{ name = "luasnip" },
 				{ name = "nvim_lua" },
 				{ name = "buffer" },
@@ -35,7 +36,7 @@ return {
 				fields = { "abbr", "kind", "menu" },
 				format = require("lspkind").cmp_format({
 					mode = "symbol",
-					maxwidth = 50,
+					maxwidth = 30,
 					ellipsis_char = "...",
 				}),
 			},

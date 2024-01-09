@@ -46,7 +46,13 @@ vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.laststatus = 3
 
---lsp
+-- folding related opts
+vim.o.foldcolumn = "0"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+-- border
 local _border = "rounded"
 vim.diagnostic.config({ virtual_text = true })
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = _border })
@@ -59,24 +65,3 @@ vim.opt_global.fillchars = {
 	eob = " ",
 	diff = "╱",
 }
-
--- autocmd
-vim.api.nvim_exec(
-	[[
- augroup EnvFiles
- autocmd!
- autocmd BufNewFile,BufRead *.env* set syntax=erlang
- augroup END
-]],
-	false
-)
-
--- highlight on yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-	group = vim.api.nvim_create_augroup("highlight_yank", {}),
-	desc = "Highlight selection on yank",
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
-	end,
-})

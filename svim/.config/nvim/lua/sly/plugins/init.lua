@@ -19,12 +19,6 @@ return {
 		end,
 	},
 	{
-		"andweeb/presence.nvim",
-		config = function()
-			require("presence").setup()
-		end,
-	},
-	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
 		config = true,
@@ -39,5 +33,19 @@ return {
 	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			signs = false,
+		},
+	},
+	{
+		"chrishrb/gx.nvim",
+		event = { "BufEnter" },
+		config = function()
+			require("gx").setup()
+		end,
 	},
 }
