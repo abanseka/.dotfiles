@@ -9,7 +9,6 @@ vim.api.nvim_set_keymap("n", "j", "gj", opts)
 vim.api.nvim_set_keymap("n", "k", "gk", opts)
 keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
-keymap.set("n", "<leader>Q", "<cmd>q!<CR>", opts)
 
 -- no highlight
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
@@ -41,10 +40,12 @@ keymap.set("n", "<leader>vs", "<cmd>e ~/scratchFolder/scratchpad.js<cr>", opts)
 keymap.set("n", "<leader>vn", "<cmd>DiffviewClose<CR>", opts)
 keymap.set("n", "<leader>vf", "<cmd>DiffviewFileHistory%<CR>", opts)
 keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
+keymap.set("n", "<leader>vd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 
 --nvim
 keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
-keymap.set("n", "<leader>nf", "<cmd>ene<cr>", opts)
+keymap.set("n", "<leader>nf", "<cmd>e ~/scratchFolder/scratch.md<cr>", opts)
+keymap.set("n", "<leader>nr", "<cmd>e ~/http/http.http<cr>", opts)
 
 -- ai
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
@@ -62,4 +63,4 @@ keymap.set("v", "<leader>aa", "<cmd>ChatGPTRun code_readability_analysis<cr>", o
 -- bufferline
 keymap.set("n", "<leader>bj", "<cmd>BufferLinePick<cr>", opts)
 keymap.set("n", "<leader>bk", "<cmd>BufferLinePickClose<cr>", opts)
-keymap.set("n", "<leader>c", ":bp <BAR> bd #<CR>", opts)
+keymap.set("n", "<leader>c", "<cmd>bd<CR>", opts)

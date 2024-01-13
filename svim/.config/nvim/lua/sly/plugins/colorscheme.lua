@@ -20,10 +20,18 @@ return {
 				hide_inactive_statusline = true,
 				dim_inactive = false,
 				lualine_bold = true,
+				on_colors = function(colors)
+					colors.border = "#45475B"
+				end,
+				on_highlights = function(hl)
+					hl.CursorLine = {
+						bg = "#313244",
+						fg = "",
+					}
+				end,
 			})
 
 			vim.cmd.colorscheme("tokyonight")
-			-- vim.cmd.colorscheme("catppuccin")
 		end,
 	},
 	{

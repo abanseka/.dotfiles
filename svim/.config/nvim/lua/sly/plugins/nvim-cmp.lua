@@ -21,11 +21,11 @@ return {
 			},
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "codeium" },
-				{ name = "luasnip" },
-				{ name = "nvim_lua" },
 				{ name = "buffer" },
 				{ name = "path" },
+				{ name = "luasnip" },
+				{ name = "codeium" },
+				{ name = "nvim_lua" },
 			},
 			snippet = {
 				expand = function(args)

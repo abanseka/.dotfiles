@@ -89,8 +89,8 @@ return {
 				popup_layout = {
 					default = "center",
 					center = {
-						width = "90%",
-						height = "90%",
+						width = "98%",
+						height = "98%",
 					},
 					right = {
 						width = "30%",

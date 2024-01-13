@@ -28,6 +28,15 @@ return {
 			}):sync()
 		end
 
+		local vertical_preview = {
+			layout_strategy = "vertical",
+			layout_config = {
+				preview_cutoff = 0.5,
+				preview_height = 0.6,
+				mirror = false,
+			},
+		}
+
 		local telescope = require("telescope")
 		telescope.setup({
 			defaults = {
@@ -38,29 +47,33 @@ return {
 				file_ignore_patterns = {
 					"node_modules/*",
 					".git/*",
-					"*.png",
-					"*.jpg",
-					"*.jpeg",
-					"*.gif",
-					"*.bmp",
-					"*.ico",
-					"*.svg",
+					".*.png",
+					".*.jpg",
+					".*.jpeg",
+					".*.gif",
+					".*.bmp",
+					".*.ico",
+					".*.svg",
 				},
 				layout_strategy = "horizontal",
 				sorting_strategy = "ascending",
 				layout_config = {
-					width = 1000, -- Set a fixed width for the Telescope window
-					height = 20, -- Set a fixed height for the Telescope window
-					prompt_position = "top", -- Position the prompt at the top
-					horizontal = {
-						width = 0.9, -- Set the width ratio for horizontal layout
-						preview_cutoff = 80, -- Set the character limit for preview
-					},
-					vertical = {
-						width = 0.9, -- Set the width ratio for vertical layout
-						preview_cutoff = 80, -- Set the character limit for preview
-					},
+					width = 60,
+					height = 20,
+					prompt_position = "top",
 				},
+			},
+			pickers = {
+				find_files = { previewer = false },
+				git_files = { previewer = false },
+				oldfiles = { previewer = false },
+				buffers = { previewer = false },
+				help_tags = { previewer = false },
+				man_pages = { previewer = false },
+				colorscheme = { previewer = false },
+				lsp_document_symbols = { previewer = false },
+				live_grep = vertical_preview,
+				current_buffer_fuzzy_find = vertical_preview,
 			},
 		})
 
@@ -73,5 +86,6 @@ return {
 		keymap.set("n", "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "buffer" })
 		keymap.set("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", { desc = "help" })
 		keymap.set("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", { desc = "colorscheme" })
+		keymap.set("n", "<leader>sf", "<cmd>Telescope git_files<cr>", { desc = "all files" })
 	end,
 }

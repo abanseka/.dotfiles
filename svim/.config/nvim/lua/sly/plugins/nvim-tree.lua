@@ -51,7 +51,7 @@ return {
 				number = false,
 				relativenumber = false,
 				signcolumn = "yes",
-				width = 40,
+				width = 30,
 				float = {
 					enable = false,
 					quit_on_focus_loss = true,
@@ -148,7 +148,6 @@ return {
 			update_focused_file = {
 				enable = true,
 				update_root = true,
-				ignore_list = {},
 			},
 			system_open = {
 				cmd = "",
