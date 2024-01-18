@@ -41,8 +41,8 @@ return {
 		telescope.setup({
 			defaults = {
 				prompt_position = "top",
-				prompt_prefix = "󱡓  ",
-				selection_caret = "  ",
+				prompt_prefix = "󰧶  ",
+				selection_caret = "󰋇  ",
 				buffer_previewer_maker = new_maker,
 				file_ignore_patterns = {
 					"node_modules/*",
@@ -58,7 +58,7 @@ return {
 				layout_strategy = "horizontal",
 				sorting_strategy = "ascending",
 				layout_config = {
-					width = 60,
+					width = 70,
 					height = 20,
 					prompt_position = "top",
 				},

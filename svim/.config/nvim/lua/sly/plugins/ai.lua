@@ -42,15 +42,15 @@ return {
 				chat = {
 					welcome_message = "",
 					loading_text = "please wait ...",
-					question_sign = " ",
-					answer_sign = "󱤅 ",
-					border_left_sign = "",
-					border_right_sign = "",
+					question_sign = " ",
+					answer_sign = " ",
+					border_left_sign = "",
+					border_right_sign = "",
 					max_line_length = 120,
 					sessions_window = {
 						active_sign = " ",
 						inactive_sign = " ",
-						current_line_sign = "󰜴 ",
+						current_line_sign = "󰋇 ",
 						border = {
 							style = "rounded",
 							text = {
@@ -102,7 +102,7 @@ return {
 						highlight = "FloatBorder",
 						style = "rounded",
 						text = {
-							top = "  ",
+							top = " 󱋰 ",
 						},
 					},
 					win_options = {
@@ -131,13 +131,13 @@ return {
 					},
 				},
 				popup_input = {
-					prompt = "  ",
+					prompt = "  ",
 					border = {
 						highlight = "FloatBorder",
 						style = "rounded",
 						text = {
 							top_align = "center",
-							top = " 󱠇 ",
+							top = " 󱋰 ",
 						},
 					},
 					win_options = {
@@ -148,7 +148,7 @@ return {
 					max_visible_lines = 20,
 				},
 				settings_window = {
-					setting_sign = " 󰟃 ",
+					setting_sign = " ",
 					border = {
 						style = "rounded",
 						text = {
@@ -160,7 +160,7 @@ return {
 					},
 				},
 				help_window = {
-					setting_sign = " 󰟃 ",
+					setting_sign = " ",
 					border = {
 						style = "rounded",
 						text = {

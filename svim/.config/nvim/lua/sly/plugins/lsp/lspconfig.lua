@@ -16,6 +16,7 @@ return {
 			border = "rounded",
 		}
 
+		---@diagnostic disable-next-line: unused-local
 		local on_attach = function(client, bufnr)
 			keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
 			keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
@@ -38,7 +39,7 @@ return {
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-		local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = "󰋼 " }
+		local signs = { Error = "󰠭 ", Warn = " ", Hint = "󰩕 ", Info = " " }
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })

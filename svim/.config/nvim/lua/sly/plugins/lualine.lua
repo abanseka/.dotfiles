@@ -59,7 +59,7 @@ return {
 				lualine_c = {
 					{
 						"diagnostics",
-						symbols = { error = "󰃤 ", warn = "󰠠 ", hint = "󰌵 ", info = " " },
+						symbols = { error = "󰠭 ", warn = " ", hint = "󰩕 ", info = " " },
 						section_separators = { left = "", right = "" },
 						component_separators = { left = "", right = "" },
 					},
@@ -67,7 +67,7 @@ return {
 				lualine_x = {
 					{
 						"diff",
-						symbols = { added = " ", modified = " ", removed = " " },
+						symbols = { added = " ", modified = "󰙈 ", removed = " " },
 						section_separators = { left = "", right = "" },
 						component_separators = { left = "", right = "" },
 					},
