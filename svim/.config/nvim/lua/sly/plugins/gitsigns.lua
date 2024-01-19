@@ -4,12 +4,12 @@ return {
 	config = function()
 		require("gitsigns").setup({
 			signs = {
-				add = { text = "" },
-				change = { text = "" },
-				delete = { text = "" },
-				topdelete = { text = "" },
-				changedelete = { text = "" },
-				untracked = { text = "" },
+				add = { text = "" },
+				change = { text = "" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "" },
+				untracked = { text = "" },
 			},
 			preview_config = {
 				border = "rounded",
@@ -38,5 +38,15 @@ return {
 				map("n", "<leader>gd", "<cmd>Gitsigns diffthis<CR>")
 			end,
 		})
+
+		vim.cmd("highlight GitSignsAdd guifg=#89b482")
+		vim.cmd("highlight GitSignsChange guifg=#e0af68")
+		vim.cmd("highlight GitSignsDelete guifg=#d3869b")
+		vim.cmd("highlight GitSignsAddNr guifg=#89b482")
+		vim.cmd("highlight GitSignsChangeNr guifg=#e0af68")
+		vim.cmd("highlight GitSignsDeleteNr guifg=#d3869b")
+		vim.cmd("highlight GitSignsAddLn guifg=#89b482")
+		vim.cmd("highlight GitSignsChangeLn guifg=#e0af68")
+		vim.cmd("highlight GitSignsDeleteLn guifg=#d3869b")
 	end,
 }

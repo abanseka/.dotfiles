@@ -10,14 +10,14 @@ return {
 				numbers = "none",
 				close_command = "bdelete! %d", -- can be a string | function, | false see "Mouse actions"
 				indicator = {
-					icon = "▎", -- this should be omitted if indicator style is not 'icon'
+					icon = "", -- this should be omitted if indicator style is not 'icon'
 					style = "icon",
 				},
-				buffer_close_icon = " ",
-				modified_icon = "●",
-				close_icon = "",
-				left_trunc_marker = " ",
-				right_trunc_marker = " ",
+				buffer_close_icon = "",
+				modified_icon = "󱇙 ",
+				close_icon = "",
+				left_trunc_marker = " ",
+				right_trunc_marker = " ",
 				max_name_length = 18,
 				max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
 				truncate_names = true, -- whether or not tab names should be truncated
@@ -26,9 +26,9 @@ return {
 				offsets = {
 					{
 						filetype = "NvimTree",
-						text = " ",
-						text_align = "left",
-						separator = true,
+						text = " 󱗼 ",
+						text_align = "",
+						separator = false,
 					},
 				},
 				color_icons = true, -- whether or not to add the filetype icon highlights

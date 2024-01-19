@@ -30,9 +30,10 @@ return {
 
 		local vertical_preview = {
 			layout_strategy = "vertical",
+			prompt_position = "bottom",
 			layout_config = {
-				preview_cutoff = 0.5,
-				preview_height = 0.6,
+				preview_cutoff = 0,
+				preview_height = 0.5,
 				mirror = false,
 			},
 		}
@@ -42,7 +43,7 @@ return {
 			defaults = {
 				prompt_position = "top",
 				prompt_prefix = "󰧶  ",
-				selection_caret = "󰋇  ",
+				selection_caret = " ",
 				buffer_previewer_maker = new_maker,
 				file_ignore_patterns = {
 					"node_modules/*",
@@ -58,8 +59,8 @@ return {
 				layout_strategy = "horizontal",
 				sorting_strategy = "ascending",
 				layout_config = {
-					width = 70,
-					height = 20,
+					width = 0.6,
+					height = 0.8,
 					prompt_position = "top",
 				},
 			},
@@ -87,5 +88,8 @@ return {
 		keymap.set("n", "<leader>sh", "<cmd>Telescope help_tags<cr>", { desc = "help" })
 		keymap.set("n", "<leader>sc", "<cmd>Telescope colorscheme<cr>", { desc = "colorscheme" })
 		keymap.set("n", "<leader>sf", "<cmd>Telescope git_files<cr>", { desc = "all files" })
+
+		vim.cmd("highlight TelescopePromptPrefix guifg=#A3FFC2")
+		vim.cmd("highlight TelescopeSelectionCaret guifg=#FFDDBB")
 	end,
 }

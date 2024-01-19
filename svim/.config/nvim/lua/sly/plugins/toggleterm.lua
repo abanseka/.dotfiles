@@ -3,7 +3,7 @@ return {
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			size = 18,
+			size = 15,
 		})
 		local opt = { noremap = true, silent = true }
 		local Terminal = require("toggleterm.terminal").Terminal
@@ -20,7 +20,7 @@ return {
 		---@diagnostic disable-next-line: duplicate-set-field
 		function _G.set_terminal_keymaps()
 			local opts = { buffer = 0 }
-			vim.keymap.set("t", "ee", [[<C-\><C-n>]], opts)
+			vim.keymap.set("t", "<C-e>", [[<C-\><C-n>]], opts)
 		end
 
 		vim.cmd("autocmd! TermOpen term://*toggleterm#* lua set_terminal_keymaps()")
