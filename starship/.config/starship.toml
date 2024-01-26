@@ -16,7 +16,7 @@ symbol = " "
 [hostname]
 ssh_only = false
 disabled = false
-format = '[ ](bold #f9e2af)[$hostname |](bold #f38ba8) '
+format = '[ ](bold #f9e2af)[bash_popi | ](bold #f38ba8) '
 
 [directory]
 truncation_length = 1

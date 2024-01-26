@@ -4,21 +4,39 @@ return {
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				variant = "moon", -- auto, main, moon, or dawn
-				dark_variant = "moon", -- main, moon, or dawn
+				variant = "moon",
+				dark_variant = "moon",
 				extend_background_behind_borders = true,
 
 				styles = {
-					bold = true,
+					bold = false,
 					italic = false,
 					transparency = true,
 				},
 			})
 
-			-- vim.cmd("colorscheme rose-pine")
-			-- vim.cmd('colorscheme rose-pine-main')
+			-- vim.cmd('colorscheme catppuccin-frappe')
+			-- vim.cmd('colorscheme tokyonight-storm')
 			vim.cmd("colorscheme rose-pine-moon")
-			-- vim.cmd('colorscheme rose-pine-dawn')
+		end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha",
+				background = {
+					light = "latte",
+					dark = "mocha",
+				},
+				transparent_background = true,
+				show_end_of_buffer = false,
+				term_colors = true,
+				no_italic = true,
+				no_bold = true,
+			})
 		end,
 	},
 	{
@@ -52,8 +70,6 @@ return {
 					}
 				end,
 			})
-
-			-- vim.cmd.colorscheme("tokyonight")
 		end,
 	},
 	{

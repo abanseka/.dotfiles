@@ -3,11 +3,24 @@ return {
 	version = "*",
 	config = function()
 		require("toggleterm").setup({
-			size = 15,
+			size = 18,
 		})
+		local use_window_size = function()
+			return math.floor(vim.o.columns * 0.99)
+		end
+
 		local opt = { noremap = true, silent = true }
 		local Terminal = require("toggleterm.terminal").Terminal
-		local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+		local lazygit = Terminal:new({
+			cmd = "lazygit",
+			hidden = true,
+			direction = "float",
+			float_opts = {
+				border = "",
+				width = use_window_size,
+				height = use_window_size,
+			},
+		})
 
 		function _lazygit_toggle()
 			lazygit:toggle()

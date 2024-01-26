@@ -18,4 +18,10 @@ return {
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
 	},
+	{
+		"ggandor/leap.nvim",
+		config = function()
+			require("leap").create_default_mappings()
+		end,
+	},
 }

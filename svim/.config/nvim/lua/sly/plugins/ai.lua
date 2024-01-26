@@ -4,7 +4,8 @@ return {
 		lazy = false,
 		config = function()
 			-- disable by default
-			-- vim.g.codeium_enabled = false
+			vim.g.codeium_enabled = false
+			vim.g.codeium_manual = true
 
 			-- remap picking suggestion to <C-i>
 			vim.keymap.set("i", "<C-i>", function()
@@ -89,8 +90,8 @@ return {
 				popup_layout = {
 					default = "center",
 					center = {
-						width = "98%",
-						height = "98%",
+						width = "100%",
+						height = "100%",
 					},
 					right = {
 						width = "30%",

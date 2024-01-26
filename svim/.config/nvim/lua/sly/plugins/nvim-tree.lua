@@ -148,6 +148,7 @@ return {
 			update_focused_file = {
 				enable = true,
 				update_root = true,
+				ignore_list = {},
 			},
 			system_open = {
 				cmd = "",
