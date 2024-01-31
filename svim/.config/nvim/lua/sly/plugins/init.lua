@@ -24,4 +24,15 @@ return {
 			require("leap").create_default_mappings()
 		end,
 	},
+	{
+		"rmagatti/goto-preview",
+		config = function()
+			require("goto-preview").setup({
+				width = 150,
+				height = 20,
+				border = "rounded",
+				preview_window_title = { enable = false },
+			})
+		end,
+	},
 }

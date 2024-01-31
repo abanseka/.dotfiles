@@ -50,5 +50,8 @@ return {
 				},
 			},
 		})
+
+		vim.cmd([[highlight ActiveBuffer guifg=#f9e2af]])
+		vim.cmd([[highlight TabLineSel guifg=#f9e2af]])
 	end,
 }

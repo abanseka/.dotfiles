@@ -28,13 +28,13 @@ return {
 			on_attach = on_attach,
 			hijack_cursor = false,
 			auto_reload_on_write = true,
-			disable_netrw = false,
-			hijack_netrw = true,
+			disable_netrw = true,
+			hijack_netrw = false,
 			hijack_unnamed_buffer_when_opening = false,
 			root_dirs = {},
-			prefer_startup_root = false,
+			prefer_startup_root = true,
 			sync_root_with_cwd = true,
-			reload_on_bufenter = false,
+			reload_on_bufenter = true,
 			respect_buf_cwd = true,
 			select_prompts = false,
 			sort = {
@@ -141,15 +141,8 @@ return {
 					},
 				},
 			},
-			hijack_directories = {
-				enable = true,
-				auto_open = true,
-			},
-			update_focused_file = {
-				enable = true,
-				update_root = true,
-				ignore_list = {},
-			},
+			hijack_directories = { enable = true },
+			update_focused_file = { enable = true },
 			system_open = {
 				cmd = "",
 				args = {},
@@ -233,9 +226,6 @@ return {
 							buftype = { "nofile", "terminal", "help" },
 						},
 					},
-				},
-				remove_file = {
-					close_window = true,
 				},
 			},
 			trash = {
