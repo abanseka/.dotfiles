@@ -99,11 +99,20 @@ alias ll="ls -l"
 alias lg="lazygit"
 alias cl="clear"
 alias ei="exit"
-alias t="tmux new -s"
-alias tl="tmux ls"
-alias ta="tmux a -t"
-alias td="tmux new -ds"
-alias tk="tmux kill-session -t"
+# tmux
+alias tm="tmux new -s"
+alias tml="tmux ls"
+alias tma="tmux a -t"
+alias tmd="tmux new -ds"
+alias tmk="tmux kill-session -t"
+# git
+alias glo="git log"
+alias gnb="git branch"
+alias gls="git branch"
+alias gco="git checkout"
+alias gad="git add"
+alias gcm="git commit -m"
+alias gsh="git stash"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

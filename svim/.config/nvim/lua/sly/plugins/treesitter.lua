@@ -55,7 +55,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-context",
 		opts = {
 			enable = true,
-			max_lines = 0,
+			max_lines = 2,
 			min_window_height = 0,
 			line_numbers = false,
 			multiline_threshold = 20,

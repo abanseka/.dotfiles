@@ -54,7 +54,7 @@ return {
 				section_separators = { left = "", right = "" },
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = { { "branch" } },
 				lualine_b = {},
 				lualine_c = {
 					{
