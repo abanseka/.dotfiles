@@ -50,20 +50,4 @@ return {
 			require("ts_context_commentstring").setup({})
 		end,
 	},
-
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		opts = {
-			enable = true,
-			max_lines = 2,
-			min_window_height = 0,
-			line_numbers = false,
-			multiline_threshold = 20,
-			trim_scope = "outer",
-			mode = "cursor",
-			separator = "󰇘",
-			zindex = 10,
-			on_attach = nil,
-		},
-	},
 }
