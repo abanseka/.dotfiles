@@ -4,8 +4,8 @@ return {
 		lazy = false,
 		config = function()
 			-- disable by default
-			vim.g.codeium_enabled = false
-			vim.g.codeium_manual = true
+			vim.g.codeium_enabled = true
+			vim.g.codeium_manual = false
 
 			-- remap picking suggestion to <C-i>
 			vim.keymap.set("i", "<C-i>", function()

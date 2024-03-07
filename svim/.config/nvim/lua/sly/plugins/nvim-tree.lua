@@ -19,29 +19,21 @@ return {
 			-- custom mappings
 			vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Parent Directory"))
 			vim.keymap.set("n", "l", api.node.open.edit, opts("Help")) -- Removed parentheses after api.node.open.edit
-
-			vim.g.nvim_tree_create_in_closed_folder = 1
-			vim.g.nvim_tree_create_in_closed_folder_max_depth = 3
 		end
 
 		nvimtree.setup({
 			on_attach = on_attach,
-			hijack_cursor = false,
-			auto_reload_on_write = true,
-			disable_netrw = true,
-			hijack_netrw = false,
-			hijack_unnamed_buffer_when_opening = false,
-			root_dirs = {},
-			prefer_startup_root = true,
 			sync_root_with_cwd = true,
-			reload_on_bufenter = true,
-			respect_buf_cwd = true,
-			select_prompts = false,
-			sort = {
-				sorter = "name",
-				folders_first = true,
-				files_first = false,
+			respect_buf_cwd = false,
+			update_focused_file = {
+				enable = true,
+				update_root = true,
 			},
+			hijack_cursor = false,
+			disable_netrw = false,
+			hijack_netrw = false,
+			reload_on_bufenter = true,
+			select_prompts = false,
 			view = {
 				centralize_selection = false,
 				cursorline = false,
@@ -54,15 +46,6 @@ return {
 				width = 30,
 				float = {
 					enable = false,
-					quit_on_focus_loss = true,
-					open_win_config = {
-						relative = "editor",
-						border = "rounded",
-						width = 30,
-						height = 30,
-						row = 1,
-						col = 1,
-					},
 				},
 			},
 			renderer = {
@@ -80,7 +63,7 @@ return {
 				highlight_bookmarks = "none",
 				highlight_clipboard = "name",
 				indent_markers = {
-					enable = false,
+					enable = true,
 					inline_arrows = false,
 					icons = {
 						corner = "└",
@@ -111,9 +94,9 @@ return {
 						file = true,
 						folder = true,
 						folder_arrow = false,
-						git = false,
-						modified = true,
-						diagnostics = true,
+						git = true,
+						modified = false,
+						diagnostics = false,
 						bookmarks = true,
 					},
 					glyphs = {
@@ -141,8 +124,6 @@ return {
 					},
 				},
 			},
-			hijack_directories = { enable = true },
-			update_focused_file = { enable = true },
 			system_open = {
 				cmd = "",
 				args = {},
@@ -150,7 +131,7 @@ return {
 			git = {
 				enable = true,
 				show_on_dirs = true,
-				show_on_open_dirs = true,
+				show_on_open_dirs = false,
 				disable_for_dirs = {},
 				timeout = 400,
 				cygwin_support = false,
@@ -172,9 +153,9 @@ return {
 				},
 			},
 			modified = {
-				enable = true,
-				show_on_dirs = true,
-				show_on_open_dirs = true,
+				enable = false,
+				show_on_dirs = false,
+				show_on_open_dirs = false,
 			},
 			filters = {
 				git_ignored = true,

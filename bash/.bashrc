@@ -99,6 +99,7 @@ alias ll="ls -l"
 alias lg="lazygit"
 alias cl="clear"
 alias ei="exit"
+alias pp="slides"
 # tmux
 alias tm="tmux new -s"
 alias tml="tmux ls"
@@ -160,3 +161,11 @@ export OPENAI_API_KEY=$(pass show neoai)
 eval "$(starship init bash)"
 function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
 . "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/home/abanseka/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

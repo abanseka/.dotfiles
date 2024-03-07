@@ -10,8 +10,6 @@ return {
 			typescript = { "eslint_d" },
 			javascriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
-			css = { "stylelint" },
-			scss = { "stylelint" },
 			json = { "jsonlint" },
 			markdown = { "markdownlint" },
 			golang = { "golangci-lint" },
