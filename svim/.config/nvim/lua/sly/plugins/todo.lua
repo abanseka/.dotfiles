@@ -11,11 +11,11 @@ return {
 				alt = { "FIX", "BUG", "ISSUE" },
 			},
 			-- TEST: testing
-			TODO = { icon = " ", color = "info", alt = { "TASK" } },
+			TODO = { icon = " ", color = "info", alt = { "TASK" } },
 			HACK = { icon = "󱀣 ", color = "warn" },
 			WARN = { icon = "󱤮 ", color = "warn", alt = { "ALERT" } },
 			PERF = { icon = "󰓅 ", color = "warn", alt = { "OPT", "PERFORMANCE", "OPTIMIZE" } },
-			NOTE = { icon = "󰟶 ", color = "hint", alt = { "INFO" } },
+			NOTE = { icon = " ", color = "test", alt = { "INFO" } },
 			TEST = { icon = "󰙨 ", color = "test", alt = { "TEST", "PASS", "FAIL" } },
 		},
 		gui_style = {
@@ -25,8 +25,8 @@ return {
 		merge_keywords = true,
 		highlight = {
 			before = "",
-			keyword = "fg",
-			after = "fg",
+			keyword = "",
+			after = "",
 		},
 		colors = {
 			err = { "DiagnosticError", "ErrorMsg", "#FFAAAA" },
