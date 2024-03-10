@@ -36,7 +36,6 @@ keymap.set("n", "<C-l>", "<C-w>l", opts)
 keymap.set("n", "<leader>vv", "<cmd>vsplit<cr>", opts)
 keymap.set("n", "<leader>vh", "<cmd>split<cr>", opts)
 keymap.set("n", "<leader>vc", "<cmd>close<cr>", opts)
-keymap.set("n", "<leader>vs", "<cmd>e ~/scratchFolder/scratchpad.js<cr>", opts)
 keymap.set("n", "<leader>vn", "<cmd>DiffviewClose<CR>", opts)
 keymap.set("n", "<leader>vf", "<cmd>DiffviewFileHistory%<CR>", opts)
 keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
@@ -52,7 +51,7 @@ keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references
 
 --nvim
 keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
-keymap.set("n", "<leader>nf", "<cmd>e ~/scratchFolder/scratch.md<cr>", opts)
+keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
 keymap.set("n", "<leader>nr", "<cmd>e ~/http/http.http<cr>", opts)
 
 -- ai

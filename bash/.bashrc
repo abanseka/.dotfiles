@@ -145,6 +145,7 @@ export PATH="$HOME/.local/kitty.app/bin:$PATH"
 
 # export go binaries
 export PATH="$HOME/go/bin/:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 
 # auto completions
 if [ -f /etc/bash_completion ]; then
