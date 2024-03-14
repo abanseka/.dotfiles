@@ -63,13 +63,13 @@ return {
 				highlight_bookmarks = "none",
 				highlight_clipboard = "name",
 				indent_markers = {
-					enable = true,
+					enable = false,
 					inline_arrows = false,
 					icons = {
-						corner = "└",
-						edge = "│",
-						item = "│",
-						bottom = "─",
+						corner = "▏",
+						edge = "▏", -- ▎▏│
+						item = "▏",
+						bottom = "",
 						none = " ",
 					},
 				},

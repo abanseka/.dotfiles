@@ -1,10 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
-    - /home/abanseka/codeSandBox/react-sandbox-ts
     - /home/abanseka/archis/projects/xiera
-    - /home/abanseka/Documents/projects/frontend
     - /home/abanseka/archis/lokum/client
+    - /home/abanseka/Documents/projects/frontend
+    - /home/abanseka/archis/projects/luxe-life
+    - /home/abanseka/archis/trainees/altug/coral-buy-feb-2024
+    - /home/abanseka/codeSandBox/react-sandbox-ts
     - /home/abanseka/Documents/projects/chat-bubbles
     - /home/abanseka/archis/lokum/cms
     - /home/abanseka/codeSandBox/frontend

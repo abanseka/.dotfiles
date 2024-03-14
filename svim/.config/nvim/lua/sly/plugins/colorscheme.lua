@@ -21,7 +21,11 @@ return {
 				},
 
 				groups = {
-					border = "muted",
+					border = "#45475B",
+					text = "#D6D5DD",
+					panel = "#272727",
+					base = "#272727",
+					surface = "#272727",
 				},
 			})
 
