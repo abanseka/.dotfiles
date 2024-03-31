@@ -14,7 +14,8 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
 
 -- rest
-keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<cr>", opts)
+keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", opts)
+keymap.set("n", "<leader>rl", "<cmd>Rest run last<cr>", opts)
 
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)
@@ -52,7 +53,7 @@ keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references
 --nvim
 keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
 keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
-keymap.set("n", "<leader>nr", "<cmd>e ~/http/http.http<cr>", opts)
+keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- ai
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)

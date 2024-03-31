@@ -29,60 +29,18 @@ return {
 				},
 			})
 
-			-- vim.cmd('colorscheme catppuccin-frappe')
-			-- vim.cmd('colorscheme tokyonight-storm')
 			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
 		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				background = {
-					light = "latte",
-					dark = "mocha",
+			require("ibl").setup({
+				indent = { char = "▏" },
+				scope = {
+					enabled = false,
 				},
-				transparent_background = true,
-				show_end_of_buffer = false,
-				term_colors = true,
-				no_italic = true,
-				no_bold = true,
-			})
-		end,
-	},
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				style = "night",
-				transparent = true,
-				terminal_colors = true,
-				styles = {
-					comments = { italic = false },
-					keywords = { italic = false },
-					functions = {},
-					variables = {},
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-				sidebars = {},
-				day_brightness = 0.3,
-				hide_inactive_statusline = true,
-				dim_inactive = false,
-				lualine_bold = true,
-				on_colors = function(colors)
-					colors.border = "#45475B"
-				end,
-				on_highlights = function(hl)
-					hl.CursorLine = {
-						bg = "#313244",
-						fg = "",
-					}
-				end,
 			})
 		end,
 	},
