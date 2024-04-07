@@ -14,8 +14,7 @@ keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
 
 -- rest
-keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", opts)
-keymap.set("n", "<leader>rl", "<cmd>Rest run last<cr>", opts)
+keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<cr>", opts)
 
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)

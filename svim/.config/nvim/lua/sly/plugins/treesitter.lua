@@ -12,16 +12,10 @@ return {
 
 			-- configure treesitter
 			treesitter.setup({ -- enable syntax highlighting
-				highlight = {
-					enable = true,
-				},
-				-- enable indentation
+				highlight = { enable = true },
 				indent = { enable = true },
-				-- enable autotagging (w/ nvim-ts-autotag plugin)
-				autotag = {
-					enable = true,
-				},
-				-- ensure these language parsers are installed
+				autotag = { enable = true },
+				auto_install = true,
 				ensure_installed = {
 					"javascript",
 					"typescript",
