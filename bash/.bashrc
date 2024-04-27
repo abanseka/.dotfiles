@@ -62,18 +62,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# use nala in place of apt
-apt() { 
-  command nala "$@"
-}
-sudo() {
-  if [ "$1" = "apt" ]; then
-    shift
-    command sudo nala "$@"
-  else
-    command sudo "$@"
-  fi
-}
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -142,6 +130,9 @@ export PATH="~/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.cargo/bin/stylua:$PATH"
 export PATH="$HOME/.local/kitty.app/bin:$PATH"
+
+# export nvim
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 # export go binaries
 export PATH="$HOME/go/bin/:$PATH"
