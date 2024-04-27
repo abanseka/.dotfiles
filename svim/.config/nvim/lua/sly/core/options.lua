@@ -65,3 +65,8 @@ vim.opt_global.fillchars = {
 	eob = " ",
 	diff = "╱",
 }
+
+vim.opt.list = true
+-- vim.opt.listchars:append("space:·")
+vim.opt.listchars:append("tab:  ")
+vim.opt.listchars:append("eol:")

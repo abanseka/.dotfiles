@@ -27,21 +27,13 @@ return {
 					base = "#272727",
 					surface = "#272727",
 				},
+
+				highlight_groups = {
+					CursorLine = { bg = "highlight_med" },
+				},
 			})
 
 			vim.cmd("colorscheme rose-pine-moon")
-		end,
-	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		config = function()
-			require("ibl").setup({
-				indent = { char = "▏" },
-				scope = {
-					enabled = false,
-				},
-			})
 		end,
 	},
 	{
