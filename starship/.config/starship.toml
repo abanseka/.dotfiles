@@ -6,8 +6,6 @@ $git_status\
 $line_break\
 $character\
 """
-
-palette = "catppuccin_mocha"
 add_newline = true
 
 [fill]
@@ -16,31 +14,33 @@ symbol = " "
 [hostname]
 ssh_only = false
 disabled = false
-format = '[ 󰏩 ](bold #f9e2af)[bhashpoppi | ](bold #f38ba8) '
+format = '[BhashPoppi ](#f38ba8) '
 
 [directory]
 truncation_length = 1
+style = ""
 
 [git_branch]
 truncation_length = 20
 truncation_symbol = ""
+style = ""
 
 [character]
-success_symbol = '[](bold #f2cdcd) '
+success_symbol = ' '
 
 [git_status]
 format = """$all_status$ahead_behind"""
-conflicted = '[󱏫 ](bold #f38ba8)'
-ahead = '[󰤇 ](bold #f38ba8)'
-behind = '[󰴻 ](bold #f9e2af)'
-diverged = '[ ](bold #cba6f7)'
-up_to_date = '[ ](bold #a6e3a1)'
-untracked = '[󱙑 ](bold #f9e2af)'
-stashed = '[󰆓 ](bold #89b4fa)'
-modified = '[󱓥 ](bold #f9e2af)'
-staged = '[󰝒 ](bold #94e2d5)'
-renamed = '[󰑕 ](bold #f2cdcd)'
-deleted = '[󰆴 ](bold #f38ba8)'
+conflicted = '[󱏫 ]( #f38ba8)'
+ahead = '[󰤇 ]( #f38ba8)'
+behind = '[󰴻 ]( #f9e2af)'
+diverged = '[ ]( #cba6f7)'
+up_to_date = '[ ]( #a6e3a1)'
+untracked = '[󱙑 ]( #f9e2af)'
+stashed = '[󰆓 ]( #89b4fa)'
+modified = '[󱓥 ]( #f9e2af)'
+staged = '[󰝒 ]( #94e2d5)'
+renamed = '[󰑕 ]( #f2cdcd)'
+deleted = '[󰆴 ]( #f38ba8)'
 
 
 [palettes.catppuccin_mocha]

@@ -1,77 +1,34 @@
 return {
 	{
-		"rose-pine/neovim",
-		name = "rose-pine",
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("rose-pine").setup({
-				variant = "auto",
-				dark_variant = "moon",
-				extend_background_behind_borders = true,
+			local light = "#45475B"
 
-				enable = {
-					terminal = true,
-					legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-					migrations = true, -- Handle deprecated options automatically
-				},
-
+			require("tokyonight").setup({
+				style = "night",
+				transparent = true,
+				terminal_colors = true,
 				styles = {
-					bold = false,
-					italic = false,
-					transparency = true,
+					comments = { italic = false },
+					keywords = { italic = false },
+					sidebars = "transparent",
+					floats = "transparent",
 				},
 
-				groups = {
-					border = "#45475B",
-					text = "#D6D5DD",
-					panel = "#272727",
-					base = "#272727",
-					surface = "#272727",
-				},
+				on_colors = function(color)
+					color.border = light
+				end,
 
-				highlight_groups = {
-					CursorLine = { bg = "highlight_med" },
-				},
+				on_highlights = function(hl)
+					hl.CursorLine = { bg = light }
+					hl.TelescopeBorder = { fg = light }
+					hl.TelescopePromptBorder = { fg = light }
+				end,
 			})
 
-			vim.cmd("colorscheme rose-pine-moon")
-		end,
-	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("noice").setup({
-				presets = { lsp_doc_border = true },
-				notifications = false,
-				messages = {
-					enabled = false,
-					view = false,
-					view_error = false,
-					view_warn = false,
-					view_history = false,
-					view_search = false,
-				},
-				lsp = {
-					progress = { enabled = false },
-					signature = { enabled = false },
-					message = { enabled = false },
-					hover = { silent = true },
-					smart_move = { enabled = false },
-				},
-				views = {
-					cmdline_popup = {
-						position = { row = "100%", col = "50%" },
-						size = { width = 60, height = "auto" },
-					},
-					popupmenu = {
-						relative = "editor",
-						position = { row = "85%", col = "50%" },
-						size = { width = 60, height = 10 },
-						border = { style = "rounded", padding = { 0, 1 } },
-						win_options = { winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" } },
-					},
-				},
-			})
+			vim.cmd("colorscheme tokyonight")
 		end,
 	},
 }

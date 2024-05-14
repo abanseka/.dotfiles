@@ -81,7 +81,7 @@ fi
 # some more ls aliases
 alias python="python3"
 alias v="nvim"
-alias cat="batcat"
+alias cat="bat"
 alias ls="lsd"
 alias ll="ls -l"
 alias lg="lazygit"
@@ -95,6 +95,7 @@ alias tma="tmux a -t"
 alias tmd="tmux new -ds"
 alias tmk="tmux kill-session -t"
 # git
+alias and="&&"
 alias glo="git log"
 alias gnb="git branch"
 alias gls="git branch"
@@ -160,4 +161,6 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+
+#lsd
+export LS_COLORS='di=34:ln=38;5;44:so=38;5;44:pi=38;5;44:bd=38;5;44:or=38;5;124:cd=38;5;172:ex=38;5;40:fi=38;5;184:no=38;5;245'

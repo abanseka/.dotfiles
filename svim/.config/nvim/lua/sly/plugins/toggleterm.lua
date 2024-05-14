@@ -22,13 +22,13 @@ return {
 			},
 		})
 
-		function _lazygit_toggle()
+		function lazygit_toggle()
 			lazygit:toggle()
 		end
 
 		vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>exe v:count1 . 'ToggleTerm'<CR>", opt)
 		vim.api.nvim_set_keymap("n", "<leader>ta", "<cmd>ToggleTermToggleAll<CR>", opt)
-		vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", opt)
+		vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua lazygit_toggle()<CR>", opt)
 
 		---@diagnostic disable-next-line: duplicate-set-field
 		function _G.set_terminal_keymaps()

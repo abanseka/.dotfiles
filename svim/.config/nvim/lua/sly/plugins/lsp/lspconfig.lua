@@ -28,6 +28,7 @@ return {
 			keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
 
 			keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+			keymap.set("n", "<leader>ld", "<cmd>Telescope diagnostic", opts)
 			keymap.set("n", "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", opts)
 			keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 			keymap.set("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)

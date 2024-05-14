@@ -41,21 +41,12 @@ keymap.set("n", "<leader>vf", "<cmd>DiffviewFileHistory%<CR>", opts)
 keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
 keymap.set("n", "<leader>vd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 
--- goto_previews
-keymap.set("n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>")
-keymap.set("n", "gpt", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>")
-keymap.set("n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>")
-keymap.set("n", "gpD", "<cmd>lua require('goto-preview').goto_preview_declaration()<CR>")
-keymap.set("n", "gP", "<cmd>lua require('goto-preview').close_all_win()<CR>")
-keymap.set("n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>")
-
 --nvim
 keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
 keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
 keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- ai
-keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
 keymap.set("v", "<leader>ae", "<cmd>ChatGPTEditWithInstruction<cr>", opts)
 keymap.set("v", "<leader>ak", "<cmd>ChatGPTRun keywords<cr>", opts)
