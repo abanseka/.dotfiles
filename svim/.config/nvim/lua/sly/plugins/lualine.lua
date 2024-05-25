@@ -1,48 +1,42 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
-		local palette = {
-			rosewater = "#f5e0dc",
-			flamingo = "#f2cdcd",
-			pink = "#f5c2e7",
-			mauve = "#cba6f7",
-			red = "#f38ba8",
-			maroon = "#eba0ac",
-			peach = "#fab387",
-			yellow = "#f9e2af",
-			green = "#a6e3a1",
-			teal = "#94e2d5",
-			sky = "#89dceb",
-			sapphire = "#74c7ec",
-			blue = "#89b4fa",
-			lavender = "#b4befe",
+		local c = {
+			orng = "#ff9e64",
+			yelw = "#e0af68",
+			grn = "#9ece6a",
+			grn1 = "#73daca",
+			grn2 = "#41a6b5",
+			til = "#1abc9c",
+			rd = "#f7768e",
+			rd1 = "#db4b4b",
 		}
 
 		local catppuccin = {
 			normal = {
-				a = { fg = palette.rosewater },
-				b = { fg = palette.flamingo },
-				c = { fg = palette.pink },
+				a = { fg = c.orng },
+				b = { fg = c.yelw },
+				c = { fg = c.rd },
 			},
 			insert = {
-				a = { fg = palette.mauve },
-				b = { fg = palette.red },
-				c = { fg = palette.maroon },
+				a = { fg = c.grn1 },
+				b = { fg = c.rd },
+				c = { fg = c.rd1 },
 			},
 			visual = {
-				a = { fg = palette.peach },
-				b = { fg = palette.yellow },
-				c = { fg = palette.green },
+				a = { fg = c.orng },
+				b = { fg = c.yelw },
+				c = { fg = c.grn },
 			},
 			replace = {
-				a = { fg = palette.teal },
-				b = { fg = palette.sky },
-				c = { fg = palette.sapphire },
+				a = { fg = c.til },
+				b = { fg = c.grn2 },
+				c = { fg = c.orng },
 			},
 			command = {
-				a = { fg = palette.blue },
-				b = { fg = palette.lavender },
-				c = { fg = palette.rosewater },
+				a = { fg = c.grn },
+				b = { fg = c.rd1 },
+				c = { fg = c.orng },
 			},
 		}
 

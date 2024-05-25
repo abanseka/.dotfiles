@@ -9,6 +9,13 @@ vim.api.nvim_set_keymap("n", "j", "gj", opts)
 vim.api.nvim_set_keymap("n", "k", "gk", opts)
 keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
 keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap.set("n", "<leader>;", "<cmd>Dashboard<CR>", opts)
+
+-- find and replace
+keymap.set("n", "<leader>r", '<cmd>lua require("spectre").toggle()<CR>', opts)
+keymap.set("n", "<leader>rw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', opts)
+keymap.set("n", "<leader>rb", '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', opts)
+keymap.set("v", "<leader>rv", '<esc><cmd>lua require("spectre").open_visual()<CR>', opts)
 
 -- no highlight
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
