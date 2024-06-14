@@ -70,3 +70,10 @@ vim.opt.list = true
 -- vim.opt.listchars:append("space:·")
 vim.opt.listchars:append("tab:  ")
 vim.opt.listchars:append("eol: ")
+
+-- GUI related config
+vim.o.guifont = "JetBrainsMono NF:h12"
+vim.g.neovide_scale_factor = 1
+vim.g.neovide_text_gamma = 0.0
+vim.g.neovide_text_contrast = 0.5
+vim.g.neovide_background_color = "#1E1E2E"

@@ -39,6 +39,7 @@ return {
 					"http",
 					"json",
 					"graphql",
+					"vimdoc",
 				},
 			})
 

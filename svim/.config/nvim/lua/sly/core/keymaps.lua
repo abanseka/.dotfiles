@@ -21,7 +21,8 @@ keymap.set("v", "<leader>rv", '<esc><cmd>lua require("spectre").open_visual()<CR
 keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
 
 -- rest
-keymap.set("n", "<leader>rr", "<cmd>lua require('rest-nvim').run()<cr>", opts)
+keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", opts)
+keymap.set("n", "<leader>re", "<cmd>Telescope rest select_env<cr>", opts)
 
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)

@@ -117,7 +117,7 @@ return {
 			},
 		})
 
-		lspconfig.gopls.setup({
+		lspconfig["gopls"].setup({
 			on_attach = on_attach,
 			handlers = handlers,
 			capabilities = capabilities,

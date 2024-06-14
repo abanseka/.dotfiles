@@ -28,7 +28,45 @@ return {
 				end,
 			})
 
-			vim.cmd("colorscheme tokyonight")
+			-- vim.cmd("colorscheme tokyonight")
+		end,
+	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require("rose-pine").setup({
+				variant = "auto",
+				dark_variant = "moon",
+				extend_background_behind_borders = true,
+
+				highlight_groups = {
+					StatusLine = { fg = "love", bg = "love", blend = 10 },
+					StatusLineNC = { fg = "subtle", bg = "surface" },
+				},
+
+				enable = {
+					terminal = true,
+					legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+					migrations = true, -- Handle deprecated options automatically
+				},
+
+				styles = {
+					bold = false,
+					italic = false,
+					transparency = true,
+				},
+
+				groups = {
+					border = "#45475B",
+					text = "#D6D5DD",
+					panel = "#272727",
+					base = "#272727",
+					surface = "#272727",
+				},
+			})
+			vim.opt.statusline = " %f %m %= %l:%c ♥ "
+			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},
 	{
@@ -43,28 +81,19 @@ return {
 					},
 					project = { enable = false },
 					packages = { enable = false },
-					mru = { limit = 0, icon = "_", label = " ", cwd_only = false },
+					mru = {
+						limit = 0,
+						icon = "-",
+						label = "----------------------------------------------",
+						cwd_only = true,
+					},
 					footer = {},
 					shortcut = {
-						{ desc = "󰊳 Update", group = "@property", action = "Lazy update", key = "u" },
+						{ desc = "󰦘 Update", group = "@property", action = "Lazy update", key = "u" },
 						{
-							icon = " ",
-							icon_hl = "@variable",
-							desc = "Files",
-							group = "Label",
-							action = "Telescope find_files",
-							key = "f",
-						},
-						{
-							desc = " Apps",
-							group = "DiagnosticHint",
-							action = "Telescope app",
-							key = "a",
-						},
-						{
-							desc = " dotfiles",
+							desc = "󰈕 dotfiles",
 							group = "Number",
-							action = "Telescope dotfiles",
+							action = "e ~/.config/nvim/init.lua",
 							key = "d",
 						},
 					},

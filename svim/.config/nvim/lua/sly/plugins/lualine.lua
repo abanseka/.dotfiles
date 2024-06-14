@@ -2,41 +2,38 @@ return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
 		local c = {
-			orng = "#ff9e64",
-			yelw = "#e0af68",
-			grn = "#9ece6a",
-			grn1 = "#73daca",
-			grn2 = "#41a6b5",
-			til = "#1abc9c",
-			rd = "#f7768e",
-			rd1 = "#db4b4b",
+			foam = "#9ccfd8",
+			love = "#eb6f92",
+			pine = "#31748f",
+			iris = "#c4a7e7",
+			muted = "#6e6a86",
 		}
 
 		local catppuccin = {
 			normal = {
-				a = { fg = c.orng },
-				b = { fg = c.yelw },
-				c = { fg = c.rd },
+				a = { fg = c.foam },
+				b = { fg = c.foam },
+				c = { fg = c.foam },
 			},
 			insert = {
-				a = { fg = c.grn1 },
-				b = { fg = c.rd },
-				c = { fg = c.rd1 },
+				a = { fg = c.iris },
+				b = { fg = c.iris },
+				c = { fg = c.iris },
 			},
 			visual = {
-				a = { fg = c.orng },
-				b = { fg = c.yelw },
-				c = { fg = c.grn },
+				a = { fg = c.foam },
+				b = { fg = c.foam },
+				c = { fg = c.foam },
 			},
 			replace = {
-				a = { fg = c.til },
-				b = { fg = c.grn2 },
-				c = { fg = c.orng },
+				a = { fg = c.muted },
+				b = { fg = c.muted },
+				c = { fg = c.muted },
 			},
 			command = {
-				a = { fg = c.grn },
-				b = { fg = c.rd1 },
-				c = { fg = c.orng },
+				a = { fg = c.pine },
+				b = { fg = c.pine },
+				c = { fg = c.pine },
 			},
 		}
 

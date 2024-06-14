@@ -1,7 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 gui:
-  windowSize: "half"
-  mainPanelSplitMode: "vertical"
+  windowSize: "full"
   theme:
     selectedLineBgColor:
       - "#323C41"
