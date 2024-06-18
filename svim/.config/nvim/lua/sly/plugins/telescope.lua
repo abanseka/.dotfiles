@@ -38,8 +38,9 @@ return {
 				help_tags = { theme = "dropdown" },
 				man_pages = { theme = "dropdown" },
 				live_grep = { theme = "dropdown" },
-				lsp_document_symbols = { theme = "dropdown" },
 				current_buffer_fuzzy_find = { theme = "dropdown" },
+				lsp_document_symbols = { theme = "dropdown" },
+				lsp_references = { theme = "dropdown" },
 			},
 		})
 

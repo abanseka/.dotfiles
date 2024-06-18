@@ -17,7 +17,7 @@ return {
 			golang = { "golangci-lint" },
 			python = { "pylint" },
 			java = { "pylint" },
-			sql = { "sqlint" },
+			sql = { "sqlfluff" },
 			nodejs = { "eslint_d" },
 			postgresql = { "pgformatter" },
 			sqlite = { "sqlite3" },

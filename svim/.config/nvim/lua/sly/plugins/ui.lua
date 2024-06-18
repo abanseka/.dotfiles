@@ -52,8 +52,20 @@ return {
 				},
 
 				styles = {
-					bold = false,
+					bold = true,
 					italic = false,
+					underline = true,
+					undercurl = true,
+					strikethrough = true,
+					special_hlgroups = {
+						"DiagnosticHint",
+						"DiagnosticInfo",
+						"DiagnosticUnderlineHint",
+						"DiagnosticUnderlineInfo",
+						"DiagnosticUnderlineWarn",
+						"DiagnosticUnderlineError",
+						"DiagnosticUnderlineWarn",
+					},
 					transparency = true,
 				},
 
@@ -65,7 +77,6 @@ return {
 					surface = "#272727",
 				},
 			})
-			vim.opt.statusline = " %f %m %= %l:%c ♥ "
 			vim.cmd("colorscheme rose-pine-moon")
 		end,
 	},
@@ -83,8 +94,8 @@ return {
 					packages = { enable = false },
 					mru = {
 						limit = 0,
-						icon = "-",
-						label = "----------------------------------------------",
+						icon = "󰮐 ",
+						label = "󰇛 󰇛 󰇛 󰇛 󰇛 󰇛 󰇛 󰮐  ",
 						cwd_only = true,
 					},
 					footer = {},
@@ -100,7 +111,6 @@ return {
 				},
 			})
 		end,
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 	{
 		"folke/noice.nvim",
@@ -169,6 +179,17 @@ return {
 			})
 
 			vim.notify = notify
+		end,
+	},
+	{
+		"allaman/emoji.nvim",
+		version = "*", -- optionally pin to a tag
+		ft = "markdown", -- adjust to your needs
+		opts = {
+			enable_cmp_integration = true,
+		},
+		config = function(_, opts)
+			require("emoji").setup(opts)
 		end,
 	},
 }

@@ -7,8 +7,8 @@ local opts = { noremap = true, silent = true }
 keymap.set("i", "kj", "<ESC>", opts)
 vim.api.nvim_set_keymap("n", "j", "gj", opts)
 vim.api.nvim_set_keymap("n", "k", "gk", opts)
-keymap.set("n", "<leader>w", "<cmd>w<CR>", opts)
-keymap.set("n", "<leader>q", "<cmd>q<CR>", opts)
+keymap.set("n", "<leader>w", "<cmd>w!<CR>", opts)
+keymap.set("n", "<leader>q", "<cmd>q!<CR>", opts)
 keymap.set("n", "<leader>;", "<cmd>Dashboard<CR>", opts)
 
 -- find and replace
@@ -24,9 +24,19 @@ keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
 keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", opts)
 keymap.set("n", "<leader>re", "<cmd>Telescope rest select_env<cr>", opts)
 
+-- dbclient
+keymap.set("n", "<leader>do", "<cmd>DBUIToggle<cr>", opts)
+
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
+
+--notes
+keymap.set("n", "<leader>nn", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
+
+--nvim
+keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
+keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- lazy
 keymap.set("n", "<leader>ps", "<cmd>Lazy sync<CR>", opts)
@@ -48,11 +58,6 @@ keymap.set("n", "<leader>vn", "<cmd>DiffviewClose<CR>", opts)
 keymap.set("n", "<leader>vf", "<cmd>DiffviewFileHistory%<CR>", opts)
 keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
 keymap.set("n", "<leader>vd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
-
---nvim
-keymap.set("n", "<leader>ne", "<cmd>e ~/.config/nvim/init.lua<cr>", opts)
-keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
-keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- ai
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)

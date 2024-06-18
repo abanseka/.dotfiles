@@ -15,17 +15,24 @@ return {
 
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+		cmp.setup.filetype({ "sql" }, {
+			sources = {
+				{ name = "vim-dadbod-completion" },
+			},
+		})
+
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,noselect",
 			},
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "buffer" },
-				{ name = "path" },
-				{ name = "luasnip" },
 				{ name = "codeium" },
+				{ name = "buffer" },
+				{ name = "luasnip" },
+				{ name = "path" },
 				{ name = "nvim_lua" },
+				{ name = "emoji" },
 			},
 			snippet = {
 				expand = function(args)

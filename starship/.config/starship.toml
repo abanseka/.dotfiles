@@ -14,7 +14,7 @@ symbol = " "
 [hostname]
 ssh_only = false
 disabled = false
-format = '[BhashPoppi ](#f38ba8) '
+format = '[ cil_vester](#ea9a97) '
 
 [directory]
 truncation_length = 1
@@ -26,21 +26,21 @@ truncation_symbol = ""
 style = ""
 
 [character]
-success_symbol = ' '
+success_symbol = '[󰧂 ](#a6e3a1)'
 
 [git_status]
 format = """$all_status$ahead_behind"""
-conflicted = '[󱏫 ]( #f38ba8)'
-ahead = '[󰤇 ]( #f38ba8)'
-behind = '[󰴻 ]( #f9e2af)'
-diverged = '[ ]( #cba6f7)'
-up_to_date = '[ ]( #a6e3a1)'
-untracked = '[󱙑 ]( #f9e2af)'
-stashed = '[󰆓 ]( #89b4fa)'
-modified = '[󱓥 ]( #f9e2af)'
-staged = '[󰝒 ]( #94e2d5)'
-renamed = '[󰑕 ]( #f2cdcd)'
-deleted = '[󰆴 ]( #f38ba8)'
+conflicted = '[ ]( #f38ba8)'
+ahead = '[󰔇 ]( #f38ba8)'
+behind = '[󱙷 ]( #f9e2af)'
+diverged = '[󰕛 ]( #cba6f7)'
+up_to_date = '[󱍨 ]( #a6e3a1)'
+untracked = '[ ]( #f9e2af)'
+stashed = '[ ]( #89b4fa)'
+modified = '[ ]( #f9e2af)'
+staged = '[󰻭 ]( #94e2d5)'
+renamed = '[󰥦 ]( #f2cdcd)'
+deleted = '[ ]( #f38ba8)'
 
 
 [palettes.catppuccin_mocha]

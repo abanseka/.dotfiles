@@ -140,11 +140,6 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$HOME/go/bin/:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
-# auto completions
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
-
 # kitty ssh fix
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
