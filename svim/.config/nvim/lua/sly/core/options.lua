@@ -46,6 +46,9 @@ vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.laststatus = 3
 
+-- Disable the initial screen
+vim.opt.shortmess:append("I")
+
 -- folding related opts
 vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99

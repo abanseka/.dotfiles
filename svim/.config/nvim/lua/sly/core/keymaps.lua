@@ -9,7 +9,7 @@ vim.api.nvim_set_keymap("n", "j", "gj", opts)
 vim.api.nvim_set_keymap("n", "k", "gk", opts)
 keymap.set("n", "<leader>w", "<cmd>w!<CR>", opts)
 keymap.set("n", "<leader>q", "<cmd>q!<CR>", opts)
-keymap.set("n", "<leader>;", "<cmd>Dashboard<CR>", opts)
+keymap.set("n", "<leader>;", "<cmd>e ~/.config/nvim/lua/sly/core/options.lua<CR>", opts)
 
 -- find and replace
 keymap.set("n", "<leader>r", '<cmd>lua require("spectre").toggle()<CR>', opts)
@@ -27,12 +27,14 @@ keymap.set("n", "<leader>re", "<cmd>Telescope rest select_env<cr>", opts)
 -- dbclient
 keymap.set("n", "<leader>do", "<cmd>DBUIToggle<cr>", opts)
 
+-- obsidian note
+keymap.set("n", "<leader>np", "<cmd>ObsidianPasteImg<cr>", opts)
+keymap.set("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
+keymap.set("n", "<leader>no", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
+
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
-
---notes
-keymap.set("n", "<leader>nn", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
 
 --nvim
 keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)

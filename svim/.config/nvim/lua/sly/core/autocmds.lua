@@ -7,3 +7,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank({ higroup = "IncSearch", timeout = 100 })
 	end,
 })
+
+-- Open a blank buffer on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+	pattern = "*",
+	command = "silent! enew",
+})
