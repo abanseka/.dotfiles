@@ -2,11 +2,10 @@ return {
 	{
 		"Exafunction/codeium.vim",
 		event = "BufEnter",
-		commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2",
 		config = function()
 			vim.keymap.set("i", "<C-i>", function()
 				return vim.fn["codeium#Accept"]()
-			end)
+			end, { expr = true, silent = true })
 		end,
 	},
 	{
@@ -50,6 +49,8 @@ return {
 							},
 						},
 						win_options = {
+							wrap = true,
+							foldcolumn = "0",
 							winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 						},
 					},
@@ -81,8 +82,8 @@ return {
 				popup_layout = {
 					default = "center",
 					center = {
-						width = "100%",
-						height = "100%",
+						width = "80%",
+						height = "70%",
 					},
 					right = {
 						width = "30%",
@@ -99,8 +100,8 @@ return {
 					},
 					win_options = {
 						wrap = true,
-						linebreak = true,
-						foldcolumn = "1",
+						linebreak = false,
+						foldcolumn = "0",
 						winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 					},
 					buf_options = {
@@ -117,8 +118,8 @@ return {
 					},
 					win_options = {
 						wrap = true,
-						linebreak = true,
-						foldcolumn = "2",
+						linebreak = false,
+						foldcolumn = "0",
 						winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 					},
 				},

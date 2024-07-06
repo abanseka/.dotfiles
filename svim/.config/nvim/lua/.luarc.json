@@ -3,5 +3,9 @@
         "vim",
         "_lazygit_toggle",
         "default_mru_ignore"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name",
+        "lowercase-global"
     ]
 }

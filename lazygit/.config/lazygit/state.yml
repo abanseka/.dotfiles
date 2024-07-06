@@ -1,15 +1,18 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
-    - /home/abanseka/archis/nokhbah/lms-client
-    - /home/abanseka/archis/projects/luxe-life
-    - /home/abanseka/archis/academy/academy-seo-marketing
-    - /home/abanseka/Documents/projects/frontend
-    - /home/abanseka/archis/lokum/client
     - /home/abanseka/Documents/projects/depo-app-routes
+    - /home/abanseka/archis/nokhbah/lms-client
+    - /home/abanseka/archis/projects/mountain-project-ozcan
+    - /home/abanseka/Documents/sandbox/go-by-test
+    - /home/abanseka/archis/lokum/client
+    - /home/abanseka/Documents/projects/frontend
+    - /home/abanseka/archis/academy/academy-seo-marketing
+    - /home/abanseka/archis/academy/academy-client-next
+    - /home/abanseka/sandbox/reactJs
+    - /home/abanseka/archis/projects/luxe-life
     - /home/abanseka/Documents/projects/gorss
     - /home/abanseka/archis/projects/eskool
-    - /home/abanseka/archis/academy/academy-client-next
     - /home/abanseka/archis/lokum/cms
     - /home/abanseka/archis/projects/Hot-Coffee
     - /home/abanseka/archis/projects/NanoLabs
@@ -17,7 +20,7 @@ startuppopupversion: 5
 lastversion: 0.42.0
 customcommandshistory:
     - :noh
-hidecommandlog: false
+hidecommandlog: true
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
 localbranchsortorder: recency

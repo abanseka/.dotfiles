@@ -67,7 +67,6 @@ return {
 				"nvim-nio",
 				"mimetypes",
 				"xml2lua",
-				"magick", -- 3rd img dependency
 			},
 		},
 	},

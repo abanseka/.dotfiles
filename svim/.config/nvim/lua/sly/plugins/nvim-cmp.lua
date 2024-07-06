@@ -27,11 +27,11 @@ return {
 			},
 			sources = {
 				{ name = "nvim_lsp" },
-				{ name = "codeium" },
-				{ name = "buffer" },
-				{ name = "luasnip" },
-				{ name = "path" },
 				{ name = "nvim_lua" },
+				{ name = "luasnip" },
+				{ name = "codeium" },
+				{ name = "path" },
+				{ name = "buffer" },
 				{ name = "emoji" },
 			},
 			snippet = {

@@ -7,6 +7,11 @@ case $- in
       *) return;;
 esac
 
+# always load up in a tmux env
+ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+   exec tmux new -A -s HOME
+ fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -104,6 +109,8 @@ alias gco="git checkout"
 alias gad="git add"
 alias gcm="git commit -m"
 alias gsh="git stash"
+#todos
+alias tl="taskline"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

@@ -30,7 +30,7 @@ keymap.set("n", "<leader>do", "<cmd>DBUIToggle<cr>", opts)
 -- obsidian note
 keymap.set("n", "<leader>np", "<cmd>ObsidianPasteImg<cr>", opts)
 keymap.set("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
-keymap.set("n", "<leader>no", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
+keymap.set("n", "<leader>no", "<cmd>vsplit ~/Documents/notes/index.md<cr>", opts)
 
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)
@@ -38,7 +38,6 @@ keymap.set("v", "<", "<gv", opts)
 
 --nvim
 keymap.set("n", "<leader>nf", "<cmd>e ~/scratch/scratch.md<cr>", opts)
-keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- lazy
 keymap.set("n", "<leader>ps", "<cmd>Lazy sync<CR>", opts)
