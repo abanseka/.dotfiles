@@ -13,3 +13,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	command = "silent! enew",
 })
+
+-- Set filetype for http files
+vim.filetype.add({
+	extension = {
+		["http"] = "http",
+		["mdx"] = "markdown",
+	},
+})

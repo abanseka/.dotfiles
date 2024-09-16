@@ -54,7 +54,7 @@ return {
 			"prismals",
 			"pyright",
 			"html",
-			"tsserver",
+			"ts_ls",
 			"cssls",
 			"tailwindcss",
 		}

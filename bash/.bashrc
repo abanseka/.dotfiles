@@ -109,8 +109,6 @@ alias gco="git checkout"
 alias gad="git add"
 alias gcm="git commit -m"
 alias gsh="git stash"
-#todos
-alias tl="taskline"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -125,8 +123,9 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# set terminal title to cwd
-PROMPT_COMMAND='echo -ne "\033]0; \a"'
+
+# set terminal title to blank 
+export PROMPT_COMMAND=
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

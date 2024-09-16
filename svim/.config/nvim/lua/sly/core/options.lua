@@ -6,7 +6,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.whichwrap = "b,s,<,>,[,],h,l"
 vim.opt.termguicolors = true
-vim.opt.number = true
+vim.opt.number = false
 vim.opt.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.opt.cmdheight = 0
@@ -45,6 +45,10 @@ vim.opt.sidescrolloff = 8
 vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.laststatus = 3
+
+--http json formatting
+vim.bo.formatexpr = ""
+vim.bo.formatprg = "jq"
 
 -- Disable the initial screen
 vim.opt.shortmess:append("I")

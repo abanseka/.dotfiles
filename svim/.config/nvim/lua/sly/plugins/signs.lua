@@ -5,8 +5,9 @@ return {
 		config = function()
 			require("mini.diff").setup({
 				view = {
-					style = vim.go.number and "sign",
+					style = "sign", -- "number"
 					signs = { add = "▏", change = "▏", delete = "▏" },
+					-- signs = { add = "▒", change = "▒", delete = "▒" },
 					priority = 199,
 				},
 			})
