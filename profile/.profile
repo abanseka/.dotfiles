@@ -30,3 +30,7 @@ fi
 # go system wide path
 export PATH=$PATH:/usr/local/go/bin
 . "$HOME/.cargo/env"
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools

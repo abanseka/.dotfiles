@@ -1,18 +1,20 @@
 return {
-	-- {
-	-- 	"Exafunction/codeium.vim",
-	-- 	event = "BufEnter",
-	-- 	config = function()
-	-- 		vim.keymap.set("i", "<C-i>", function()
-	-- 			return vim.fn["codeium#Accept"]()
-	-- 		end, { expr = true, silent = true })
-	-- 	end,
-	-- },
+	{
+		"Exafunction/codeium.vim",
+		event = "BufEnter",
+		config = function()
+			vim.g.codeium_enabled = false
+			vim.keymap.set("i", "<C-i>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+		end,
+	},
 	{
 		"jackMort/ChatGPT.nvim",
 		event = "VeryLazy",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
+			"folke/trouble.nvim",
 		},
 		config = function()
 			require("chatgpt").setup({
@@ -80,13 +82,13 @@ return {
 					},
 				},
 				popup_layout = {
-					default = "center",
+					default = "right",
 					center = {
 						width = "80%",
 						height = "70%",
 					},
 					right = {
-						width = "30%",
+						width = "50%",
 						width_settings_open = "50%",
 					},
 				},

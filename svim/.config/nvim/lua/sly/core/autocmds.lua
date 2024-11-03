@@ -19,5 +19,6 @@ vim.filetype.add({
 	extension = {
 		["http"] = "http",
 		["mdx"] = "markdown",
+		["Avante"] = "markdown",
 	},
 })

@@ -31,7 +31,7 @@ keymap.set("n", "<leader>do", "<cmd>DBUIToggle<cr>", opts)
 -- obsidian note
 keymap.set("n", "<leader>np", "<cmd>ObsidianPasteImg<cr>", opts)
 keymap.set("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
-keymap.set("n", "<leader>no", "<cmd>vsplit ~/Documents/notes/index.md<cr>", opts)
+keymap.set("n", "<leader>no", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
 
 -- adust indentation
 keymap.set("v", ">", ">gv", opts)
@@ -62,6 +62,8 @@ keymap.set("n", "<leader>vg", "<cmd>DiffviewOpen<CR>", opts)
 keymap.set("n", "<leader>vd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 
 -- ai
+keymap.set("n", "<leader>ad", "<cmd>CodeiumDisable<cr>", opts)
+keymap.set("n", "<leader>ae", "<cmd>CodeiumEnable<cr>", opts)
 keymap.set("n", "<leader>ao", "<cmd>ChatGPT<cr>", opts)
 keymap.set("v", "<leader>ae", "<cmd>ChatGPTEditWithInstruction<cr>", opts)
 keymap.set("v", "<leader>ak", "<cmd>ChatGPTRun keywords<cr>", opts)
