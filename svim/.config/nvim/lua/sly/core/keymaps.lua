@@ -33,7 +33,7 @@ keymap.set("n", "<leader>np", "<cmd>ObsidianPasteImg<cr>", opts)
 keymap.set("n", "<leader>nn", "<cmd>ObsidianNew<cr>", opts)
 keymap.set("n", "<leader>no", "<cmd>e ~/Documents/notes/index.md<cr>", opts)
 
--- adust indentation
+-- adjust indentation
 keymap.set("v", ">", ">gv", opts)
 keymap.set("v", "<", "<gv", opts)
 

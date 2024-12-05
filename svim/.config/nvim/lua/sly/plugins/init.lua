@@ -4,6 +4,13 @@ return {
 	"nvim-pack/nvim-spectre",
 	{ "sindrets/diffview.nvim", event = "BufRead" },
 	{
+		"echasnovski/mini.cursorword",
+		version = "*",
+		config = function()
+			require("mini.cursorword").setup()
+		end,
+	},
+	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
 		config = true,

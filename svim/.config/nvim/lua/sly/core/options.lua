@@ -26,7 +26,6 @@ vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.swapfile = false
-vim.opt.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.title = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
@@ -51,7 +50,7 @@ vim.bo.formatexpr = ""
 vim.bo.formatprg = "jq"
 
 -- Disable the initial screen
-vim.opt.shortmess:append("I")
+-- vim.opt.shortmess:append("I")
 
 -- folding related opts
 vim.o.foldcolumn = "0"

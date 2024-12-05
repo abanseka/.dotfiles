@@ -1,7 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
+    - /home/abanseka/archis/academy/academy-client-side
+    - /home/abanseka/archis/archis-connect-app
+    - /home/abanseka/archis/academy/cms-platform
+    - /home/abanseka/archis/lokum/cms
+    - /home/abanseka/archis/projects/sandbox
     - /home/abanseka/Documents/projects/berikids-ngo
+    - /home/abanseka/sandbox/svelte
     - /home/abanseka/archis/archis-mobile-app
     - /home/abanseka/Documents/projects/website
     - /home/abanseka/sandbox/rn-beginner
@@ -15,7 +21,6 @@ recentrepos:
     - /home/abanseka/archis/academy/academy-client-next
     - /home/abanseka/Documents/projects/gorss
     - /home/abanseka/archis/projects/eskool
-    - /home/abanseka/archis/lokum/cms
     - /home/abanseka/archis/projects/Hot-Coffee
     - /home/abanseka/archis/projects/NanoLabs
 startuppopupversion: 5

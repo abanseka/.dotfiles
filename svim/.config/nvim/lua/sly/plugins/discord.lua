@@ -3,6 +3,7 @@ return {
 		"vyfor/cord.nvim",
 		build = "./build || .\\build",
 		event = "VeryLazy",
+		enabled = false,
 		opts = {
 			usercmds = false,
 			log_level = "error",

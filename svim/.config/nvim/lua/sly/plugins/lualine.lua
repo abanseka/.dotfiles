@@ -10,16 +10,16 @@ return {
     -- stylua: ignore
     local colors = {
       bg       = '#262626',
-      fg       = '#bbc2cf',
-      yellow   = '#ECBE7B',
-      cyan     = '#008080',
-      darkblue = '#081633',
-      green    = '#98be65',
-      orange   = '#FF8800',
-      violet   = '#a9a1e1',
-      magenta  = '#c678dd',
-      blue     = '#51afef',
-      red      = '#ec5f67',
+      fg       = '#ebdbb2',
+      yellow   = '#fabd2f',
+      cyan     = '#83a598',
+      darkblue = '#458588',
+      green    = '#b8bb26',
+      orange   = '#fe8019',
+      violet   = '#d3869b',
+      magenta  = '#d3869b',
+      blue     = '#83a598',
+      red      = '#fb4934',
     }
 
 		local conditions = {

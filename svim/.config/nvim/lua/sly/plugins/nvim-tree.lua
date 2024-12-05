@@ -81,7 +81,7 @@ return {
 						},
 						folder = {
 							enable = false,
-							color = true,
+							color = false,
 						},
 					},
 					git_placement = "before",
