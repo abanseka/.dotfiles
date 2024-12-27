@@ -22,3 +22,11 @@ vim.filetype.add({
 		["Avante"] = "markdown",
 	},
 })
+
+-- set formatprg for json
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "json",
+	callback = function()
+		vim.bo.formatexpr = "v:lua.require'conform'.formatexpr()"
+	end,
+})

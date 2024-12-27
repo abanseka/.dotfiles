@@ -23,7 +23,7 @@ keymap.set("n", "<leader>h", "<cmd>noh<CR>", opts)
 -- rest
 keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", opts)
 keymap.set("n", "<leader>re", "<cmd>Telescope rest select_env<cr>", opts)
-keymap.set("n", "<leader>nr", "<cmd>e ~/http/rest.http<cr>", opts)
+keymap.set("n", "<leader>rf", "<cmd>e ~/http/rest.http<cr>", opts)
 
 -- dbclient
 keymap.set("n", "<leader>do", "<cmd>DBUIToggle<cr>", opts)

@@ -3,4 +3,4 @@ gui:
   windowSize: "full"
   theme:
     selectedLineBgColor:
-      - "#323C41"
+      - "#32302F"

@@ -1,12 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
+    - /home/abanseka/archis/academy/academy-admin-app
+    - /home/abanseka/Documents/projects/simple-bank
     - /home/abanseka/archis/academy/academy-client-side
     - /home/abanseka/archis/archis-connect-app
     - /home/abanseka/archis/academy/cms-platform
+    - /home/abanseka/Documents/projects/berikids-ngo
     - /home/abanseka/archis/lokum/cms
     - /home/abanseka/archis/projects/sandbox
-    - /home/abanseka/Documents/projects/berikids-ngo
     - /home/abanseka/sandbox/svelte
     - /home/abanseka/archis/archis-mobile-app
     - /home/abanseka/Documents/projects/website
