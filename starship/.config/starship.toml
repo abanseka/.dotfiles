@@ -1,11 +1,11 @@
-format = """
-$hostname\
-$directory\
-$git_branch\
-$git_status\
-$line_break\
-$character\
-"""
+# format = """
+# $hostname\
+# $directory\
+# $git_branch\
+# $git_status\
+# $line_break\
+# $character\
+# """
 add_newline = true
 
 [fill]

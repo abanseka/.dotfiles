@@ -2,11 +2,14 @@ lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
     - /home/abanseka/archis/academy/academy-admin-app
-    - /home/abanseka/Documents/projects/simple-bank
+    - /home/abanseka/archis/projects/trustco
     - /home/abanseka/archis/academy/academy-client-side
+    - /home/abanseka/sandbox/strapi-blocks-demo-next-js
     - /home/abanseka/archis/archis-connect-app
-    - /home/abanseka/archis/academy/cms-platform
+    - /home/abanseka/sandbox/next-js
     - /home/abanseka/Documents/projects/berikids-ngo
+    - /home/abanseka/Documents/projects/simple-bank
+    - /home/abanseka/archis/academy/cms-platform
     - /home/abanseka/archis/lokum/cms
     - /home/abanseka/archis/projects/sandbox
     - /home/abanseka/sandbox/svelte
