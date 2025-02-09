@@ -40,6 +40,7 @@ return {
 				end,
 			},
 			formatting = {
+				expandable_indicator = false,
 				fields = { "abbr", "kind", "menu" },
 				format = require("lspkind").cmp_format({
 					mode = "symbol",

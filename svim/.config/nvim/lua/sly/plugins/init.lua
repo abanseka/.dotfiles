@@ -13,6 +13,7 @@ return {
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
+		enabled = false,
 		config = true,
 	},
 	{
@@ -68,6 +69,7 @@ return {
 		"vhyrro/luarocks.nvim",
 		priority = 1000,
 		config = true,
+		enabled = false,
 		opts = {
 			rocks = {
 				"lua-curl",

@@ -11,6 +11,9 @@ keymap.set("n", "<leader>w", "<cmd>w!<CR>", opts)
 keymap.set("n", "<leader>q", "<cmd>q!<CR>", opts)
 keymap.set("n", "<leader>;", "<cmd>e ~/.config/nvim/lua/sly/core/options.lua<CR>", opts)
 
+-- undo tree
+keymap.set("n", "<leader>u", "<cmd>lua require('undotree').toggle()<CR>", opts)
+
 -- find and replace
 keymap.set("n", "<leader>r", '<cmd>lua require("spectre").toggle()<CR>', opts)
 keymap.set("n", "<leader>rw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', opts)

@@ -1,36 +1,34 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
+    - /home/abanseka/archis/archis-connect-app
+    - /home/abanseka/Documents/projects/berikids-ngo
+    - /home/abanseka/Documents/projects/website
+    - /home/abanseka/archis/projects/team-archis-fasco
+    - /home/abanseka/archis/lokum/client
+    - /home/abanseka/archis/projects/team-archis-rateit
+    - /home/abanseka/archis/projects/team-archis-artone
+    - /home/abanseka/archis/projects/eskool
     - /home/abanseka/archis/academy/academy-admin-app
+    - /home/abanseka/sandbox/strapi-cloud
     - /home/abanseka/archis/projects/trustco
     - /home/abanseka/archis/academy/academy-client-side
-    - /home/abanseka/sandbox/strapi-blocks-demo-next-js
-    - /home/abanseka/archis/archis-connect-app
     - /home/abanseka/sandbox/next-js
-    - /home/abanseka/Documents/projects/berikids-ngo
     - /home/abanseka/Documents/projects/simple-bank
     - /home/abanseka/archis/academy/cms-platform
     - /home/abanseka/archis/lokum/cms
-    - /home/abanseka/archis/projects/sandbox
     - /home/abanseka/sandbox/svelte
     - /home/abanseka/archis/archis-mobile-app
-    - /home/abanseka/Documents/projects/website
     - /home/abanseka/sandbox/rn-beginner
     - /home/abanseka/archis/academy/academy-seo-marketing
-    - /home/abanseka/archis/projects/gunel-solo-project-coral-buy
     - /home/abanseka/archis/nokhbah/lms-client
-    - /home/abanseka/archis/projects/luxe-life
     - /home/abanseka/sandbox/reactJs
-    - /home/abanseka/archis/projects/mountain-project-ozcan
-    - /home/abanseka/archis/lokum/client
     - /home/abanseka/archis/academy/academy-client-next
     - /home/abanseka/Documents/projects/gorss
-    - /home/abanseka/archis/projects/eskool
-    - /home/abanseka/archis/projects/Hot-Coffee
-    - /home/abanseka/archis/projects/NanoLabs
 startuppopupversion: 5
-lastversion: 0.44.0
+lastversion: 0.45.2
 customcommandshistory:
+    - "30"
     - :noh
 hidecommandlog: false
 ignorewhitespaceindiffview: false
