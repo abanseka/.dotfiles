@@ -57,7 +57,7 @@ return {
 	{
 		"allaman/emoji.nvim",
 		version = "*", -- optionally pin to a tag
-		ft = "markdown", -- adjust to your needs
+		ft = "*", -- adjust to your needs
 		opts = {
 			enable_cmp_integration = true,
 		},

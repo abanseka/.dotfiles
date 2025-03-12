@@ -1,14 +1,18 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 
 # font
-font_size 11
-font_family      JetBrainsMono Light
+font_size 14
+font_family      JetBrainsMono
+font_style      normal
+font_italics    no
+font_bold        yes
+font_weight      light
 disable_ligatures never
 
 #spacing
 adjust_baseline 1
-adjust_line_height  125%
-adjust_column_width 115%
+adjust_line_height  130%
+adjust_column_width 110%
 
 
 #cursor
@@ -16,12 +20,14 @@ adjust_column_width 115%
 cursor_shape beam
 cursor_blink_interval 0.5
 cursor_beam_thickness 3
+cursor_text__color background
 
 #window
 remember_window_size yes
 window_padding_width 5
 shell_integration no-title
-hide_window_decorations no
+# hide_window_decorations yes
+linux_display_server x11
 
 
 # Mouse 
@@ -35,15 +41,17 @@ enable_audio_bell no
 # background tuning
 background_tint 1
 background_opacity 1
-background_image_layout centered 
+background_image_layout centered
 #scaled  tiled, mirror-tiled, scaled, clamped, centered or cscaled. 
 
 dynamic_background_opacity no
-# background_image ./termwall.png
+# background_image ./kittywall.png
 
 # Nerd Fonts v2.3.3
 symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0-U+E0D4,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6AA,U+E700-U+E7C5,U+EA60-U+EBEB,U+F000-U+F2E0,U+F300-U+F32F,U+F400-U+F4A9,U+F500-U+F8FF,U+F0001-U+F1AF0 Symbols Nerd Font Mono
 
-#scheme
-# Added by Gogh
-include colors.conf
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Frappe
+include current-theme.conf
+# END_KITTY_THEME
