@@ -26,7 +26,7 @@ format = '[ $version](bold green) '
 [hostname]
 ssh_only = false
 disabled = false
-format = '[ cil_vhestr ](#ea9a97) '
+format = '[ cilvstr ](#ea9a97) '
 
 [directory]
 truncation_length = 1
