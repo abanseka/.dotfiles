@@ -2,13 +2,12 @@ lastupdatecheck: 0
 recentrepos:
     - /home/abanseka/.dotfiles
     - /home/abanseka/archis/lokum/client
-    - /home/abanseka/archis/academy/academy-server-side
+    - /home/abanseka/archis/cloudmatic-ai-marketing-site
     - /home/abanseka/archis/archis-connect-app
-    - /home/abanseka/Documents/projects/berikids-ngo
+    - /home/abanseka/archis/academy/academy-server-side
     - /home/abanseka/archis/projects/team-archis-fasco
     - /home/abanseka/archis/academy/academy-seo-marketing
     - /home/abanseka/archis/lokum/cms
-    - /home/abanseka/Documents/projects/website
     - /home/abanseka/archis/projects/team-archis-rateit
     - /home/abanseka/archis/projects/team-archis-artone
     - /home/abanseka/archis/projects/eskool
@@ -17,7 +16,6 @@ recentrepos:
     - /home/abanseka/archis/projects/trustco
     - /home/abanseka/archis/academy/academy-client-side
     - /home/abanseka/sandbox/next-js
-    - /home/abanseka/Documents/projects/simple-bank
     - /home/abanseka/archis/academy/cms-platform
     - /home/abanseka/sandbox/svelte
     - /home/abanseka/archis/archis-mobile-app
@@ -25,7 +23,6 @@ recentrepos:
     - /home/abanseka/archis/nokhbah/lms-client
     - /home/abanseka/sandbox/reactJs
     - /home/abanseka/archis/academy/academy-client-next
-    - /home/abanseka/Documents/projects/gorss
 startuppopupversion: 5
 lastversion: 0.47.2
 customcommandshistory:
@@ -34,7 +31,7 @@ customcommandshistory:
 hidecommandlog: false
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
-renamesimilaritythreshold: 50
+renamesimilaritythreshold: 55
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical
 gitlogorder: topo-order

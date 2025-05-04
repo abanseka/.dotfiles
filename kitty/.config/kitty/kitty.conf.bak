@@ -1,34 +1,27 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
-
 # font
-font_size 14
-font_family      JetBrainsMono
-font_style      normal
-font_italics    no
-font_bold        yes
-font_weight      light
+font_size 13.5
+font_family      JetBrainsMono Nerd Font
 disable_ligatures never
 
 #spacing
 adjust_baseline 1
-adjust_line_height  130%
-adjust_column_width 110%
-
+adjust_column_width 114%
+adjust_line_height  14
 
 #cursor
 # cursor none
 cursor_shape beam
 cursor_blink_interval 0.5
-cursor_beam_thickness 3
+cursor_block_thickness 0.5
 cursor_text__color background
 
 #window
 remember_window_size yes
 window_padding_width 5
 shell_integration no-title
-# hide_window_decorations yes
 linux_display_server x11
-
+hide_window_decorations no
 
 # Mouse 
 mouse_hide_wait 1.0
@@ -52,6 +45,6 @@ symbol_map U+23FB-U+23FE,U+2665,U+26A1,U+2B58,U+E000-U+E00A,U+E0A0-U+E0A3,U+E0B0
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Frappe
+# Aquarium Dark
 include current-theme.conf
 # END_KITTY_THEME

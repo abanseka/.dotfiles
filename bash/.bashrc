@@ -8,8 +8,8 @@ case $- in
 esac
 
 # always load up in a tmux env
-# if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux new -A -s HOME
+#  if command -v tmux &>/dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#     exec tmux new -A -s HOME
 # fi
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -178,3 +178,8 @@ export LS_COLORS='di=34:ln=38;5;44:so=38;5;44:pi=38;5;44:bd=38;5;44:or=38;5;124:
 export ANDROID_HOME=~/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+. "$HOME/.local/bin/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
